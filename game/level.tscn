@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://biea5c01wh6uv"]
+
+[ext_resource type="PackedScene" uid="uid://btq5qpmisxyvw" path="res://game/paddle.tscn" id="1_uu78k"]
+[ext_resource type="PackedScene" uid="uid://dlf3cuomck6nk" path="res://game/wall.tscn" id="2_xssv6"]
+
+[node name="level" type="Node2D"]
+scale = Vector2(1.02487, 0.994032)
+
+[node name="paddle" parent="." instance=ExtResource("1_uu78k")]
+position = Vector2(570, 628)
+scale = Vector2(5, 5)
+collision_mask = 3
+
+[node name="left_wall" parent="." instance=ExtResource("2_xssv6")]
+position = Vector2(31.2234, 327.957)
+scale = Vector2(0.991, 10.25)
+
+[node name="right_wall" parent="." instance=ExtResource("2_xssv6")]
+position = Vector2(1092.82, 323.933)
+scale = Vector2(0.983, 11.0392)
+
+[node name="up_wall" parent="." instance=ExtResource("2_xssv6")]
+visible = false
+position = Vector2(567.875, 519.098)
+rotation = -1.5708
+scale = Vector2(0.991, 17.2116)
+collision_layer = 2
+
+[node name="down_wall" parent="." instance=ExtResource("2_xssv6")]
+visible = false
+position = Vector2(536.652, 680.059)
+rotation = -1.5708
+scale = Vector2(0.991, 18.0968)
+collision_layer = 2
