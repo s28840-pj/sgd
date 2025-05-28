@@ -47,20 +47,20 @@ position = Vector2(963.049, -15.0901)
 rotation = -1.5708
 scale = Vector2(0.991, 61.5965)
 
+[node name="brick6" parent="." instance=ExtResource("4_uk5k8")]
+position = Vector2(223.443, 410.45)
+
+[node name="brick5" parent="." instance=ExtResource("4_uk5k8")]
+position = Vector2(1583.62, 425.54)
+
+[node name="brick4" parent="." instance=ExtResource("4_uk5k8")]
+position = Vector2(431.274, 424.534)
+
+[node name="brick3" parent="." instance=ExtResource("4_uk5k8")]
+position = Vector2(659.596, 420.51)
+
+[node name="brick2" parent="." instance=ExtResource("4_uk5k8")]
+position = Vector2(1253.82, 425.54)
+
 [node name="brick" parent="." instance=ExtResource("4_uk5k8")]
 position = Vector2(936.704, 431.576)
-
-[node name="brick" parent="brick" instance=ExtResource("4_uk5k8")]
-position = Vector2(317.113, -6.03604)
-
-[node name="brick" parent="brick/brick" instance=ExtResource("4_uk5k8")]
-position = Vector2(-820.592, -1.00604)
-
-[node name="brick" parent="brick/brick/brick" instance=ExtResource("4_uk5k8")]
-position = Vector2(226.37, -4.02399)
-
-[node name="brick" parent="brick/brick/brick/brick" instance=ExtResource("4_uk5k8")]
-position = Vector2(924.02, 5.03)
-
-[node name="brick" parent="brick/brick/brick/brick/brick" instance=ExtResource("4_uk5k8")]
-position = Vector2(-1360.17, -15.09)

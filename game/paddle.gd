@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: int = 500
+@export var speed: int = 600
 
 func _physics_process(delta):
 	# ruszanie sie prawo-lewo
