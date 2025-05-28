@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://c8oa2s0hb0aw5" path="res://game/paddle.gd" id="1_2jk21"]
 [ext_resource type="Texture2D" uid="uid://cvtk50ct23x1n" path="res://art/paddle.png" id="1_185fh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jk21"]
-size = Vector2(32, 7)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jk21"]
+radius = 3.5
+height = 32.0
 
 [node name="paddle" type="CharacterBody2D"]
 script = ExtResource("1_2jk21")
@@ -14,4 +15,5 @@ texture = ExtResource("1_185fh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_2jk21")
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_2jk21")

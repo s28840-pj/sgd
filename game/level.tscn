@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://biea5c01wh6uv"]
+[gd_scene load_steps=5 format=3 uid="uid://biea5c01wh6uv"]
 
 [ext_resource type="PackedScene" uid="uid://btq5qpmisxyvw" path="res://game/paddle.tscn" id="1_uu78k"]
 [ext_resource type="PackedScene" uid="uid://dlf3cuomck6nk" path="res://game/wall.tscn" id="2_xssv6"]
+[ext_resource type="PackedScene" uid="uid://f5mgnpo4jyo6" path="res://game/ball.tscn" id="3_8bv7i"]
+[ext_resource type="PackedScene" uid="uid://dthyblbci3o3w" path="res://game/brick.tscn" id="4_uk5k8"]
 
 [node name="level" type="Node2D"]
 scale = Vector2(1.02487, 0.994032)
@@ -9,29 +11,56 @@ scale = Vector2(1.02487, 0.994032)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(936.704, 543.242)
 
+[node name="ball" parent="." instance=ExtResource("3_8bv7i")]
+position = Vector2(948.413, 519.098)
+
 [node name="paddle" parent="." instance=ExtResource("1_uu78k")]
 position = Vector2(945.486, 1066.36)
 scale = Vector2(5, 5)
 collision_mask = 3
 
 [node name="left_wall" parent="." instance=ExtResource("2_xssv6")]
-position = Vector2(31.2235, 495.96)
-scale = Vector2(0.991, 19.9076)
+position = Vector2(15.6117, 495.96)
+scale = Vector2(0.991, 37.734)
 
 [node name="right_wall" parent="." instance=ExtResource("2_xssv6")]
-position = Vector2(1842.18, 459.744)
-scale = Vector2(0.983, 19.6104)
+position = Vector2(1857.8, 462.762)
+scale = Vector2(0.983, 41.3401)
 
 [node name="up_wall" parent="." instance=ExtResource("2_xssv6")]
 visible = false
 position = Vector2(926.947, 858.121)
 rotation = -1.5708
-scale = Vector2(0.991, 30.9335)
+scale = Vector2(0.991, 57.5725)
 collision_layer = 2
 
 [node name="down_wall" parent="." instance=ExtResource("2_xssv6")]
 visible = false
-position = Vector2(820.592, 1118.68)
+position = Vector2(945.486, 1102.58)
 rotation = -1.5708
-scale = Vector2(0.991, 30.9736)
+scale = Vector2(0.991, 59.1819)
 collision_layer = 2
+
+[node name="up_wall2" parent="." instance=ExtResource("2_xssv6")]
+visible = false
+position = Vector2(963.049, -15.0901)
+rotation = -1.5708
+scale = Vector2(0.991, 61.5965)
+
+[node name="brick" parent="." instance=ExtResource("4_uk5k8")]
+position = Vector2(936.704, 431.576)
+
+[node name="brick" parent="brick" instance=ExtResource("4_uk5k8")]
+position = Vector2(317.113, -6.03604)
+
+[node name="brick" parent="brick/brick" instance=ExtResource("4_uk5k8")]
+position = Vector2(-820.592, -1.00604)
+
+[node name="brick" parent="brick/brick/brick" instance=ExtResource("4_uk5k8")]
+position = Vector2(226.37, -4.02399)
+
+[node name="brick" parent="brick/brick/brick/brick" instance=ExtResource("4_uk5k8")]
+position = Vector2(924.02, 5.03)
+
+[node name="brick" parent="brick/brick/brick/brick/brick" instance=ExtResource("4_uk5k8")]
+position = Vector2(-1360.17, -15.09)
