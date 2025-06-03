@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 			
 			if collision.get_collider().has_method("hit"):
 				collision.get_collider().hit()
+				
 		if(velocity.y > 0 and velocity.y < 100):
 			velocity.y = -200
 			
@@ -24,3 +25,9 @@ func _physics_process(delta: float) -> void:
 			velocity.x = -200
 
 		
+
+func gameOver():
+	get_tree().reload_current_scene()
+
+func _on_deathzone_body_entered(body: Node2D) -> void:
+	gameOver()

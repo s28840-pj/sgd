@@ -21,3 +21,11 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="F:/xd.avi"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

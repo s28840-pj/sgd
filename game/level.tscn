@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://biea5c01wh6uv"]
+[gd_scene load_steps=7 format=3 uid="uid://biea5c01wh6uv"]
 
+[ext_resource type="Script" uid="uid://cuewiv3a3mfmu" path="res://game/level.gd" id="1_8vjk3"]
 [ext_resource type="PackedScene" uid="uid://btq5qpmisxyvw" path="res://game/paddle.tscn" id="1_uu78k"]
 [ext_resource type="PackedScene" uid="uid://dlf3cuomck6nk" path="res://game/wall.tscn" id="2_xssv6"]
 [ext_resource type="PackedScene" uid="uid://f5mgnpo4jyo6" path="res://game/ball.tscn" id="3_8bv7i"]
-[ext_resource type="PackedScene" uid="uid://dthyblbci3o3w" path="res://game/brick.tscn" id="4_uk5k8"]
+[ext_resource type="Texture2D" uid="uid://btmee2rxrttte" path="res://art/background.png" id="5_8vjk3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vjk3"]
+size = Vector2(20.2607, 29.1742)
 
 [node name="level" type="Node2D"]
 scale = Vector2(1.02487, 0.994032)
+script = ExtResource("1_8vjk3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(936.704, 543.242)
@@ -47,20 +52,19 @@ position = Vector2(963.049, -15.0901)
 rotation = -1.5708
 scale = Vector2(0.991, 61.5965)
 
-[node name="brick6" parent="." instance=ExtResource("4_uk5k8")]
-position = Vector2(223.443, 410.45)
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.14902)
+z_index = -1
+position = Vector2(938.168, 537.709)
+scale = Vector2(29.7141, 17.0549)
+texture = ExtResource("5_8vjk3")
 
-[node name="brick5" parent="." instance=ExtResource("4_uk5k8")]
-position = Vector2(1583.62, 425.54)
+[node name="Deathzone" type="Area2D" parent="."]
+position = Vector2(939.631, 1114.65)
+scale = Vector2(89.4795, 1)
 
-[node name="brick4" parent="." instance=ExtResource("4_uk5k8")]
-position = Vector2(431.274, 424.534)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
+position = Vector2(-0.0545435, 10.5632)
+shape = SubResource("RectangleShape2D_8vjk3")
 
-[node name="brick3" parent="." instance=ExtResource("4_uk5k8")]
-position = Vector2(659.596, 420.51)
-
-[node name="brick2" parent="." instance=ExtResource("4_uk5k8")]
-position = Vector2(1253.82, 425.54)
-
-[node name="brick" parent="." instance=ExtResource("4_uk5k8")]
-position = Vector2(936.704, 431.576)
+[connection signal="body_entered" from="Deathzone" to="ball" method="_on_deathzone_body_entered"]

@@ -4,14 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://d1axe060kuaya" path="res://art/brick.png" id="1_awxk8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5p85m"]
-size = Vector2(48, 48)
+size = Vector2(64, 64)
 
 [node name="brick" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_5p85m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_awxk8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
