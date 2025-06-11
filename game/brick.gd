@@ -1,15 +1,22 @@
+class_name Brick
+
 extends RigidBody2D
 
+var hitsNeeded: int
+
 func _ready() -> void:
-	pass
+	hitsNeeded = 1
 	
 func _process(delta: float) -> void:
 	pass
 	
 func hit():
-	$Sprite2D.visible = false
-	$CollisionShape2D.disabled = true
+	hitsNeeded -= 1
 	
-	await get_tree().create_timer(1).timeout
-	queue_free()
+	if hitsNeeded == 0:
+		$Sprite2D.visible = false
+		$CollisionShape2D.disabled = true
+		
+		await get_tree().create_timer(1).timeout
+		queue_free()
 	

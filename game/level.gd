@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var brickObject = preload("res://game/brick.tscn")
+@onready var enemyObject = preload("res://game/enemy.tscn")
 
 var columns = 32
 var rows = 7
@@ -16,7 +17,8 @@ func setupLevel():
 		for c in columns:
 			var randomNumber = randi_range(0,2)
 			if randomNumber > 0:
-				var newBrick = brickObject.instantiate()
+				#var newBrick = brickObject.instantiate()
+				var newBrick = enemyObject.instantiate()
 				add_child(newBrick)
 				newBrick.position = Vector2(margin + (68*c), margin + (68*r))
 				var sprite = newBrick.get_node('Sprite2D')
