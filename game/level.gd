@@ -28,8 +28,25 @@ func setupLevel():
 					sprite.modulate = colors[1]
 				if r < 3:
 					sprite.modulate = colors[2]
+
+
+
+@onready var pause_menu = $Camera2D/Pause_Menu
+var paused = false
+
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+		
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	paused = !paused
+	
 
 func getColors():
 	var Colors = [
