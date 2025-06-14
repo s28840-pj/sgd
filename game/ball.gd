@@ -41,4 +41,4 @@ func gameOver():
 	get_tree().reload_current_scene()
 
 func _on_deathzone_body_entered(body: Node2D) -> void:
-	gameOver()
+	get_tree().change_scene_to_file("res://game_over_screen/game_over.tscn")
