@@ -9,19 +9,30 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	if is_active:
-		
 		var collision = move_and_collide(velocity * delta)
 		
 		if collision:
-			velocity = velocity.bounce(collision.get_normal())
+			var collider = collision.get_collider()
+			var collider_index = collision.get_collider_shape_index()
+			var normal = collision.get_normal()
 			
-			if collision.get_collider().has_method("hit"):
-				collision.get_collider().hit()
+			if collider.name == "paddle":
+				match collider_index:
+					0: 
+						velocity = velocity.bounce(normal)
+					1,2,3:
+						velocity = velocity.bounce(normal)
+						return
+					_:
+						print("Unexpected shape index: ", collider_index)
+			else:
+				velocity = velocity.bounce(normal)
 				
-		if(velocity.y > 0 and velocity.y < 100):
+			if collider.has_method("hit"):
+				collider.hit()
+		if velocity.y > 0 and velocity.y < 100:
 			velocity.y = -200
-			
-		if(velocity.x == 0):
+		if velocity.x == 0:
 			velocity.x = -200
 
 		
