@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://f5mgnpo4jyo6"]
+[gd_scene load_steps=6 format=3 uid="uid://f5mgnpo4jyo6"]
 
 [ext_resource type="Script" uid="uid://ckr2i4qsobdu3" path="res://game/ball.gd" id="1_gxnrv"]
 [ext_resource type="Texture2D" uid="uid://d15t2641o5f3p" path="res://art/ball.png" id="1_x8fbi"]
@@ -6,12 +6,34 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x8fbi"]
 radius = 8.0
 
+[sub_resource type="Curve" id="Curve_gxnrv"]
+_data = [Vector2(0.322034, 1), 0.0, 0.0, 0, 0, Vector2(0.641243, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_gxnrv"]
+offsets = PackedFloat32Array(0.39, 1)
+colors = PackedColorArray(0.388235, 0.815686, 0.862745, 1, 1, 1, 1, 1)
+
 [node name="ball" type="CharacterBody2D"]
 script = ExtResource("1_gxnrv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_x8fbi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x8fbi")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
+amount = 1000
+texture = ExtResource("1_x8fbi")
+lifetime = 0.4
+emission_shape = 1
+emission_sphere_radius = 12.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_gxnrv")
+color_ramp = SubResource("Gradient_gxnrv")

@@ -31,7 +31,7 @@ offset_right = 6.10352e-05
 offset_bottom = 6.10352e-05
 
 [node name="ball" parent="." instance=ExtResource("3_8bv7i")]
-position = Vector2(948.413, 519.098)
+position = Vector2(951.34, 632.776)
 
 [node name="paddle" parent="." instance=ExtResource("1_uu78k")]
 position = Vector2(945.486, 1066.36)

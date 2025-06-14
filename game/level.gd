@@ -3,14 +3,19 @@ extends Node2D
 @onready var brickObject = preload("res://game/brick.tscn")
 @onready var enemyObject = preload("res://game/enemy.tscn")
 
-var columns = 32
+var columns = 26
 var rows = 7
-var margin = 50
+var margin = 75
 
 func _ready() -> void:
 	setupLevel()
 	
 func setupLevel():
+	rows = 2 + GameManager.level
+	
+	if rows > 7:
+		rows = 7
+	
 	var colors = getColors()
 	colors.shuffle()
 	for r in rows:
@@ -20,7 +25,7 @@ func setupLevel():
 				#var newBrick = brickObject.instantiate()
 				var newBrick = enemyObject.instantiate()
 				add_child(newBrick)
-				newBrick.position = Vector2(margin + (68*c), margin + (68*r))
+				newBrick.position = Vector2(margin + (69*c), margin + (69*r))
 				var sprite = newBrick.get_node('Sprite2D')
 				if r <= 9:
 					sprite.modulate = colors[0]
@@ -28,8 +33,6 @@ func setupLevel():
 					sprite.modulate = colors[1]
 				if r < 3:
 					sprite.modulate = colors[2]
-
-
 
 @onready var pause_menu = $Camera2D/Pause_Menu
 var paused = false

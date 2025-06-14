@@ -15,6 +15,10 @@ run/main_scene="uid://cf42jpws1rgdq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://game/game_manager.tscn"
+
 [display]
 
 window/size/viewport_width=1920
@@ -25,6 +29,10 @@ window/stretch/mode="canvas_items"
 [editor]
 
 movie_writer/movie_file="F:/xd.avi"
+
+[global_group]
+
+Brick=""
 
 [input]
 
