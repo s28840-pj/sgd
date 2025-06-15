@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf42jpws1rgdq"]
+[gd_scene load_steps=4 format=3 uid="uid://cf42jpws1rgdq"]
 
 [ext_resource type="Script" uid="uid://cj5m7jfigs6i2" path="res://menu/menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_g18jx"]
+[ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="3_6nwqt"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -43,6 +45,12 @@ text = "Options"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(72, -40)
+scale = Vector2(0.0293333, 0.0293333)
+texture = ExtResource("2_g18jx")
+script = ExtResource("3_6nwqt")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_player_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Shop" to="." method="_on_shop_pressed"]

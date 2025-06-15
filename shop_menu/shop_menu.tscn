@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://rvryrb260w8d"]
+[gd_scene load_steps=4 format=3 uid="uid://rvryrb260w8d"]
 
 [ext_resource type="Script" uid="uid://c4d84ev6o6sfj" path="res://shop_menu/shop_menu.gd" id="1_d3ese"]
+[ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_dl1a4"]
+[ext_resource type="Script" uid="uid://d04npn34v4jaw" path="res://shop_menu/cursor.gd" id="3_pjsta"]
 
 [node name="Shop_Menu" type="Control"]
 layout_mode = 3
@@ -31,6 +33,12 @@ layout_mode = 2
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Back"
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(41, -37)
+scale = Vector2(0.029, 0.029)
+texture = ExtResource("2_dl1a4")
+script = ExtResource("3_pjsta")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

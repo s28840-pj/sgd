@@ -27,9 +27,9 @@ func setupLevel():
 				add_child(newBrick)
 				newBrick.position = Vector2(margin + (69*c), margin + (69*r))
 				var sprite = newBrick.get_node('Sprite2D')
-				if r <= 9:
+				if r <= 7:
 					sprite.modulate = colors[0]
-				if r < 6:
+				if r < 5:
 					sprite.modulate = colors[1]
 				if r < 3:
 					sprite.modulate = colors[2]
