@@ -86,5 +86,6 @@ shape = SubResource("RectangleShape2D_8vjk3")
 stream = ExtResource("7_3gsf4")
 volume_db = -8.0
 autoplay = true
+bus = &"music"
 
 [connection signal="body_entered" from="Deathzone" to="ball" method="_on_deathzone_body_entered"]
