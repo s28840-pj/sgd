@@ -16,6 +16,7 @@ func hit():
 	
 	if _health == 0:
 		GameManager.addPoints(1)
+		$AudioStreamPlayer2D.play()
 		$Sprite2D.visible = false
 		$Crack.visible = false
 		$CollisionShape2D.disabled = true

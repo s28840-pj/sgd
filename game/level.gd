@@ -59,3 +59,9 @@ func getColors():
 		Color( 1, 1, 1, 1 ),
 	]
 	return Colors
+
+func audio_speedup(score) -> void:
+	var new_pitch = 1.0 + (score / 100.0)
+	$AudioStreamPlayer2D.pitch_scale = new_pitch
+	
+	

@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 				match collider_index:
 					0: 
 						velocity = velocity.bounce(normal)
+						collider.change_sprite()
 					1,2,3:
 						velocity = velocity.bounce(normal)
 						return

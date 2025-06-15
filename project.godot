@@ -33,6 +33,7 @@ movie_writer/movie_file="F:/xd.avi"
 [global_group]
 
 Brick=""
+Level=""
 
 [input]
 

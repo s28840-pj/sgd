@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://biea5c01wh6uv"]
+[gd_scene load_steps=9 format=3 uid="uid://biea5c01wh6uv"]
 
 [ext_resource type="Script" uid="uid://cuewiv3a3mfmu" path="res://game/level.gd" id="1_8vjk3"]
 [ext_resource type="PackedScene" uid="uid://btq5qpmisxyvw" path="res://game/paddle.tscn" id="1_uu78k"]
@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dlf3cuomck6nk" path="res://game/wall.tscn" id="2_xssv6"]
 [ext_resource type="PackedScene" uid="uid://f5mgnpo4jyo6" path="res://game/ball.tscn" id="3_8bv7i"]
 [ext_resource type="Texture2D" uid="uid://btmee2rxrttte" path="res://art/background.png" id="5_8vjk3"]
+[ext_resource type="AudioStream" uid="uid://rxejw3fckmx6" path="res://game/themesong.wav" id="7_3gsf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vjk3"]
 size = Vector2(20.2607, 29.1742)
 
-[node name="level" type="Node2D"]
+[node name="level" type="Node2D" groups=["Level"]]
 scale = Vector2(1.02487, 0.994032)
 script = ExtResource("1_8vjk3")
 
@@ -31,10 +32,10 @@ offset_right = 6.10352e-05
 offset_bottom = 6.10352e-05
 
 [node name="ball" parent="." instance=ExtResource("3_8bv7i")]
-position = Vector2(951.34, 632.776)
+position = Vector2(936.704, 691.125)
 
 [node name="paddle" parent="." instance=ExtResource("1_uu78k")]
-position = Vector2(945.486, 1066.36)
+position = Vector2(939.631, 1027.13)
 scale = Vector2(5, 5)
 collision_mask = 3
 
@@ -80,5 +81,10 @@ scale = Vector2(89.4795, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
 position = Vector2(-0.0545435, 10.5632)
 shape = SubResource("RectangleShape2D_8vjk3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_3gsf4")
+volume_db = -8.0
+autoplay = true
 
 [connection signal="body_entered" from="Deathzone" to="ball" method="_on_deathzone_body_entered"]
