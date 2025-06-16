@@ -33,10 +33,54 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[font_size=30][b][i]Game Over[/i][/b][/font_size]"
+text = "[font_size=30]Game Over[/font_size]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Score_Box" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Score_Label" type="Label" parent="MarginContainer/VBoxContainer/Score_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score:"
+vertical_alignment = 1
+
+[node name="Score_Text" type="Label" parent="MarginContainer/VBoxContainer/Score_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_alignment = 1
+
+[node name="Level_Box" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level_Label" type="Label" parent="MarginContainer/VBoxContainer/Level_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level:"
+vertical_alignment = 1
+
+[node name="Level_Text" type="Label" parent="MarginContainer/VBoxContainer/Level_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_alignment = 1
+
+[node name="Leaderboard" type="Label" parent="MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+text = "Leader Board"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Put in Your name"
+alignment = 1
+
+[node name="Confirm" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Confirm"
 
 [node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -52,5 +96,6 @@ scale = Vector2(0.0293333, 0.0293333)
 texture = ExtResource("2_3wsfb")
 script = ExtResource("3_lfqig")
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main_Menu" to="." method="_on_main_menu_pressed"]

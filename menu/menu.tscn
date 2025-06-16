@@ -59,6 +59,10 @@ text = "Play"
 layout_mode = 2
 text = "Shop"
 
+[node name="Leaderboard" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Leaderboards"
+
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
@@ -75,5 +79,6 @@ script = ExtResource("3_6nwqt")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

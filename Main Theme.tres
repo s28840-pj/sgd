@@ -5,5 +5,7 @@
 [resource]
 Button/fonts/font = ExtResource("1_juw0u")
 Label/fonts/font = ExtResource("1_juw0u")
+LineEdit/fonts/font = ExtResource("1_juw0u")
 RichTextLabel/fonts/normal_font = ExtResource("1_juw0u")
+TextEdit/fonts/font = ExtResource("1_juw0u")
 VBoxContainer/constants/separation = 5

@@ -11,6 +11,8 @@ func _on_play_pressed() -> void:
 func _on_shop_pressed() -> void:
 	get_tree().change_scene_to_file("res://shop_menu/shop_menu.tscn")
 
+func _on_leaderboard_pressed() -> void:
+	get_tree().change_scene_to_file("res://leaderboards/leaderboards.tscn")
 
 func _on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://options_menu/options_menu.tscn")
