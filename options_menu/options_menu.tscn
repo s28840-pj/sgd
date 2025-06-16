@@ -39,10 +39,19 @@ layout_mode = 2
 [node name="Volume_Container" type="VBoxContainer" parent="MarginContainer/Options"]
 layout_mode = 2
 
+[node name="Options_Text" type="RichTextLabel" parent="MarginContainer/Options/Volume_Container"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=40]Options[/font_size]"
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Volume_Text" type="RichTextLabel" parent="MarginContainer/Options/Volume_Container"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[font_size=30]Volume[/font_size]"
+text = "Volume"
 fit_content = true
 autowrap_mode = 2
 horizontal_alignment = 1

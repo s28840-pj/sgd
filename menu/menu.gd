@@ -2,6 +2,8 @@ extends Control
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
+	GameManager.hide_canvas()
 
 func _on_play_pressed() -> void:
 	#GameManager.level = 1

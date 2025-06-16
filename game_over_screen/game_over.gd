@@ -6,6 +6,8 @@ func _ready() -> void:
 	var score_text = $MarginContainer/VBoxContainer/Score_Box/Score_Text
 	var level_text = $MarginContainer/VBoxContainer/Level_Box/Level_Text
 	
+	GameManager.hide_canvas()
+	
 	score_text.text = str(GameManager.score)
 	level_text.text = str(GameManager.level)
 	

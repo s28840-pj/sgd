@@ -1,16 +1,38 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bytvsetogekp"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bytvsetogekp"]
 
 [ext_resource type="FontFile" uid="uid://deb5yjrilpcfx" path="res://PixelPurl.ttf" id="1_juw0u"]
+[ext_resource type="StyleBox" uid="uid://labucfsk57ln" path="res://art/menu_art/Button_focus.tres" id="2_ckpeo"]
+[ext_resource type="StyleBox" uid="uid://ctyr3r8b76uy6" path="res://art/menu_art/Button_disabled.tres" id="2_ficw4"]
+[ext_resource type="StyleBox" uid="uid://csgcvr18jhd8w" path="res://art/menu_art/Button_hover.tres" id="3_uvdkk"]
+[ext_resource type="StyleBox" uid="uid://dluwc2vx4j6uv" path="res://art/menu_art/Label_normal.tres" id="4_ckpeo"]
+[ext_resource type="StyleBox" uid="uid://q2hscitnk57w" path="res://art/menu_art/Button_normal.tres" id="4_ndjdi"]
+[ext_resource type="StyleBox" uid="uid://yuqt85vo4w71" path="res://art/menu_art/HSlider_normal.tres" id="6_8xyyd"]
+[ext_resource type="StyleBox" uid="uid://c6g4pynigveyx" path="res://art/menu_art/LineEdit_focus.tres" id="6_27dwd"]
+[ext_resource type="StyleBox" uid="uid://bsp8ewj21yftp" path="res://art/menu_art/LineEdit_normal.tres" id="7_uc15q"]
+[ext_resource type="StyleBox" uid="uid://b5nu8t7ikrwxe" path="res://art/menu_art/RichText_normal.tres" id="9_8xyyd"]
 
 [resource]
-Button/font_sizes/font_size = 20
+Button/font_sizes/font_size = 25
 Button/fonts/font = ExtResource("1_juw0u")
+Button/styles/disabled = ExtResource("2_ficw4")
+Button/styles/focus = ExtResource("2_ckpeo")
+Button/styles/hover = ExtResource("3_uvdkk")
+Button/styles/hover_pressed = ExtResource("3_uvdkk")
+Button/styles/normal = ExtResource("4_ndjdi")
+Button/styles/pressed = ExtResource("4_ndjdi")
+HSlider/styles/grabber_area = ExtResource("6_8xyyd")
+HSlider/styles/grabber_area_highlight = ExtResource("6_8xyyd")
+HSlider/styles/slider = ExtResource("6_8xyyd")
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_juw0u")
+Label/styles/normal = ExtResource("4_ckpeo")
 LineEdit/font_sizes/font_size = 20
 LineEdit/fonts/font = ExtResource("1_juw0u")
-RichTextLabel/font_sizes/normal_font_size = 20
+LineEdit/styles/focus = ExtResource("6_27dwd")
+LineEdit/styles/normal = ExtResource("7_uc15q")
+RichTextLabel/font_sizes/normal_font_size = 30
 RichTextLabel/fonts/normal_font = ExtResource("1_juw0u")
+RichTextLabel/styles/normal = ExtResource("9_8xyyd")
 TextEdit/font_sizes/font_size = 20
 TextEdit/fonts/font = ExtResource("1_juw0u")
 VBoxContainer/constants/separation = 5

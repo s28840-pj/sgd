@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf42jpws1rgdq"]
+[gd_scene load_steps=6 format=3 uid="uid://cf42jpws1rgdq"]
 
 [ext_resource type="Script" uid="uid://cj5m7jfigs6i2" path="res://menu/menu.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_g18jx"]
 [ext_resource type="Theme" uid="uid://bytvsetogekp" path="res://Main Theme.tres" id="2_pbjm4"]
 [ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="3_6nwqt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbjm4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -28,6 +31,7 @@ grow_horizontal = 2
 [node name="Title_Text" type="RichTextLabel" parent="Title"]
 layout_mode = 2
 theme = ExtResource("2_pbjm4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pbjm4")
 bbcode_enabled = true
 text = "[font_size=100]Breakout RougeLike[/font_size]"
 fit_content = true

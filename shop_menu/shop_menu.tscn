@@ -51,5 +51,5 @@ scale = Vector2(0.029, 0.029)
 texture = ExtResource("2_dl1a4")
 script = ExtResource("3_pjsta")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

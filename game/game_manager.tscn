@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmc2b1o5djxt"]
+[gd_scene load_steps=4 format=3 uid="uid://cmc2b1o5djxt"]
 
 [ext_resource type="Script" uid="uid://biobhcefmn77b" path="res://game/game_manager.gd" id="1_u4isy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4isy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ratsn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_u4isy")
@@ -8,16 +14,26 @@ script = ExtResource("1_u4isy")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_left = 807.0
-offset_right = 1135.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_right = 164.0
 offset_bottom = 42.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4isy")
 text = "0"
 horizontal_alignment = 1
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer"]
-offset_left = 1661.0
-offset_right = 1883.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -222.0
 offset_bottom = 42.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 30
-horizontal_alignment = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ratsn")
+horizontal_alignment = 1
+vertical_alignment = 1
