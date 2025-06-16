@@ -33,13 +33,25 @@ func load_highscores():
 	else:
 		print("Error opening file for reading")
 
+func _on_line_edit_text_submitted(new_text: String) -> void:
+	_on_confirm_pressed()
+
 func _on_confirm_pressed() -> void:
 	var player_name = $MarginContainer/VBoxContainer/LineEdit.text
+	if (player_name == ""):
+		$MarginContainer/VBoxContainer/Error_label.show()
+		$MarginContainer/VBoxContainer/Error_label.text = "Player Name cannot be empty"
+		return
 	var player_score = GameManager.score
+	if (player_score < 1):
+		$MarginContainer/VBoxContainer/Error_label.show()
+		$MarginContainer/VBoxContainer/Error_label.text = "Sorry, Score too low"
+		return
 	save_highscore(player_name,player_score)
 	var confirmButton = $MarginContainer/VBoxContainer/Confirm
 	confirmButton.disabled = true
 	confirmButton.text = "Score Added"
+	$MarginContainer/VBoxContainer/Error_label.hide()
 
 
 func _on_restart_pressed() -> void:
