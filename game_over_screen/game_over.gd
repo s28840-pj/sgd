@@ -15,7 +15,6 @@ func _ready() -> void:
 
 func save_highscore(player_name, score):
 	highscores[player_name] = score
-	# Save to file
 	var file = FileAccess.open("user://leaderboard.txt", FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(highscores))

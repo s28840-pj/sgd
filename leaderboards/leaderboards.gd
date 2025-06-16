@@ -27,8 +27,8 @@ func show_highscores():
 		func(name):
 			return { "name": name, "score": highscores[name] }
 	)
-	scores_array.sort_custom(func(a, b): return int(b["score"] - a["score"]))
-	scores_array = scores_array.slice(0, 5)
+	scores_array.sort_custom(func(a, b): return int(b["score"] < a["score"]))
+	scores_array = scores_array.slice(0, 10)
 
 	var container = $MarginContainer/VBoxContainer/Leaderboard_Container
 
