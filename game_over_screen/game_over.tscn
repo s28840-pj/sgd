@@ -69,7 +69,7 @@ vertical_alignment = 1
 [node name="Leaderboard" type="Label" parent="MarginContainer/VBoxContainer"]
 clip_contents = true
 layout_mode = 2
-text = "Leader Board"
+text = "Leaderboard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
