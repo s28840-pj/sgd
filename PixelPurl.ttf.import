@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c0l6f6oq0lxrc"
-path="res://.godot/imported/Game Paused DEMO.otf-d1d2914d7f3bf06cbcbf4b5b4ea20a5f.fontdata"
+uid="uid://deb5yjrilpcfx"
+path="res://.godot/imported/PixelPurl.ttf-c6aa90daf3e49a77d62625c9921e1963.fontdata"
 
 [deps]
 
-source_file="res://Game Paused DEMO.otf"
-dest_files=["res://.godot/imported/Game Paused DEMO.otf-d1d2914d7f3bf06cbcbf4b5b4ea20a5f.fontdata"]
+source_file="res://PixelPurl.ttf"
+dest_files=["res://.godot/imported/PixelPurl.ttf-c6aa90daf3e49a77d62625c9921e1963.fontdata"]
 
 [params]
 

@@ -1,11 +1,16 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://bytvsetogekp"]
 
-[ext_resource type="FontFile" uid="uid://c0l6f6oq0lxrc" path="res://Game Paused DEMO.otf" id="1_juw0u"]
+[ext_resource type="FontFile" uid="uid://deb5yjrilpcfx" path="res://PixelPurl.ttf" id="1_juw0u"]
 
 [resource]
+Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("1_juw0u")
+Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_juw0u")
+LineEdit/font_sizes/font_size = 20
 LineEdit/fonts/font = ExtResource("1_juw0u")
+RichTextLabel/font_sizes/normal_font_size = 20
 RichTextLabel/fonts/normal_font = ExtResource("1_juw0u")
+TextEdit/font_sizes/font_size = 20
 TextEdit/fonts/font = ExtResource("1_juw0u")
 VBoxContainer/constants/separation = 5
