@@ -35,6 +35,10 @@ movie_writer/movie_file="F:/xd.avi"
 Brick=""
 Level=""
 
+[gui]
+
+theme/custom="uid://bytvsetogekp"
+
 [input]
 
 ui_left={

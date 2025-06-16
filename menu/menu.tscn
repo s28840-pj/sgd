@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf42jpws1rgdq"]
+[gd_scene load_steps=5 format=3 uid="uid://cf42jpws1rgdq"]
 
 [ext_resource type="Script" uid="uid://cj5m7jfigs6i2" path="res://menu/menu.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_g18jx"]
+[ext_resource type="Theme" uid="uid://bytvsetogekp" path="res://Main Theme.tres" id="2_pbjm4"]
 [ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="3_6nwqt"]
 
 [node name="Menu" type="Control"]
@@ -12,6 +13,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lti8b")
+
+[node name="Title" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 200.0
+offset_right = 250.0
+offset_bottom = 402.0
+grow_horizontal = 2
+
+[node name="Title_Text" type="RichTextLabel" parent="Title"]
+layout_mode = 2
+theme = ExtResource("2_pbjm4")
+bbcode_enabled = true
+text = "[font_size=100]Breakout RougeLite[/font_size]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

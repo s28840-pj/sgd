@@ -39,7 +39,7 @@ layout_mode = 2
 [node name="Volume_Text" type="RichTextLabel" parent="MarginContainer/Options/Volume_Container"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[font_size=20][b][i]Volume[/i][/b][/font_size]"
+text = "[font_size=30]Volume[/font_size]"
 fit_content = true
 autowrap_mode = 2
 horizontal_alignment = 1

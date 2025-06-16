@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bytvsetogekp"]
+
+[ext_resource type="FontFile" uid="uid://c0l6f6oq0lxrc" path="res://Game Paused DEMO.otf" id="1_juw0u"]
+
+[resource]
+Button/fonts/font = ExtResource("1_juw0u")
+Label/fonts/font = ExtResource("1_juw0u")
+RichTextLabel/fonts/normal_font = ExtResource("1_juw0u")
+VBoxContainer/constants/separation = 5

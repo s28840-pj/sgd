@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://doctm8cegyc2y"]
+[gd_scene load_steps=8 format=3 uid="uid://doctm8cegyc2y"]
 
 [ext_resource type="Script" uid="uid://slvemn88v3w1" path="res://pause_menu/pause_menu.gd" id="1_5hbt6"]
+[ext_resource type="Theme" uid="uid://bytvsetogekp" path="res://Main Theme.tres" id="2_b0obc"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_rd7dy"]
 [ext_resource type="Script" uid="uid://cvw8rqob8ndur" path="res://options_menu/master_volume_slider.gd" id="2_wn31l"]
 [ext_resource type="Script" uid="uid://c5m5vmgcuxsce" path="res://options_menu/music_volume_slider.gd" id="3_b0obc"]
@@ -38,8 +39,9 @@ layout_mode = 2
 
 [node name="Paused_Text" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_b0obc")
 bbcode_enabled = true
-text = "[font_size=30][b][i]Paused[/i][/b][/font_size]"
+text = "[font_size=40]Paused[/font_size]"
 fit_content = true
 autowrap_mode = 2
 horizontal_alignment = 1
@@ -51,7 +53,7 @@ layout_mode = 2
 [node name="Volume_Text" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Volume_Container"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[font_size=20][b][i]Volume[/i][/b][/font_size]"
+text = "[font_size=30]Volume[/font_size]"
 fit_content = true
 autowrap_mode = 2
 horizontal_alignment = 1
@@ -122,7 +124,7 @@ texture = ExtResource("2_rd7dy")
 script = ExtResource("3_uwtdo")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_quit_pressed"]
