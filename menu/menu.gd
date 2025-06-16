@@ -3,7 +3,7 @@ extends Control
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-func _on_player_pressed() -> void:
+func _on_play_pressed() -> void:
 	#GameManager.level = 1
 	#GameManager.score = 0
 	get_tree().change_scene_to_file("res://game/level.tscn")
