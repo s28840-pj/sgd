@@ -8,6 +8,8 @@ var rows = 7
 var margin = 75
 
 func _ready() -> void:
+	GameManager.show_canvas()
+	
 	setupLevel()
 	
 func setupLevel():
