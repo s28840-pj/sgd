@@ -111,6 +111,9 @@ texture = ExtResource("2_y0hpd")
 script = ExtResource("3_l2tnc")
 
 [connection signal="pressed" from="MarginContainer/Options/Volume_Container/Master_Volume/Master_Muted" to="MarginContainer/Options/Volume_Container/Master_Volume/Master_Muted" method="_on_pressed"]
+[connection signal="value_changed" from="MarginContainer/Options/Volume_Container/Master_Volume/Master_Volume_Slider" to="MarginContainer/Options/Volume_Container/Master_Volume/Master_Volume_Slider" method="_on_value_changed"]
 [connection signal="pressed" from="MarginContainer/Options/Volume_Container/Music_Volume/Music_Muted" to="MarginContainer/Options/Volume_Container/Music_Volume/Music_Muted" method="_on_pressed"]
+[connection signal="value_changed" from="MarginContainer/Options/Volume_Container/Music_Volume/Music_Volume_Slider" to="MarginContainer/Options/Volume_Container/Music_Volume/Music_Volume_Slider" method="_on_value_changed"]
 [connection signal="pressed" from="MarginContainer/Options/Volume_Container/SFX_Volume/SFX_Muted" to="MarginContainer/Options/Volume_Container/SFX_Volume/SFX_Muted" method="_on_pressed"]
+[connection signal="value_changed" from="MarginContainer/Options/Volume_Container/SFX_Volume/SFX_Volume_Slider" to="MarginContainer/Options/Volume_Container/SFX_Volume/SFX_Volume_Slider" method="_on_value_changed"]
 [connection signal="pressed" from="MarginContainer/Options/Back" to="." method="_on_back_pressed"]
