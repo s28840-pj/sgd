@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmg6fxtyntdqy"]
+
+[ext_resource type="Texture2D" uid="uid://d1axe060kuaya" path="res://art/brick1.png" id="1_gy535"]
+[ext_resource type="Script" uid="uid://b2cb7u1ex0xnn" path="res://level/brick/brick.gd" id="1_pslur"]
+[ext_resource type="Texture2D" uid="uid://bqx35t420mdhj" path="res://art/crack.png" id="3_853qt"]
+[ext_resource type="AudioStream" uid="uid://f1xcjdeygf6t" path="res://art/destroyedBlock.wav" id="4_6yndv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pslur"]
+size = Vector2(64, 64)
+
+[node name="Brick" type="RigidBody2D" groups=["Bricks"]]
+gravity_scale = 0.0
+script = ExtResource("1_pslur")
+
+[node name="Brick_Sprite" type="Sprite2D" parent="." groups=["Brick"]]
+texture = ExtResource("1_gy535")
+
+[node name="Break" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_853qt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pslur")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.15
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector2(0, -980)
+
+[node name="Break_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6yndv")

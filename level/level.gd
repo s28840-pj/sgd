@@ -1,6 +1,10 @@
 extends Node2D
 
+@onready var brickObject = preload("res://level/brick/brick.tscn")
+#@onready var wallObject = preload("res://level/walls/walls.tscn")
 
+const brick1 = preload("res://art/brick1.png")
+const brick2 = preload("res://art/brick2.png")
 
 @onready var pause_menu = $Camera2D/Pause_Menu
 var paused = false
@@ -23,7 +27,8 @@ func setupLevel():
 	
 	$themeSong.playing = true
 	
-	$Ball.global_position = Vector2(randi_range(100,1850),500)
+	$Ball.global_position = get_random_ball_position()
+	#Vector2(randi_range(100,1850),500)
 	
 	rows = 2 + GameManager.level
 	
@@ -38,14 +43,16 @@ func setupLevel():
 			var randomNumber = randi_range(0,2)
 			if randomNumber > 0:
 				
-				var brickFab = Sniper
-				if GameManager.level > 1 && randi_range(GameManager.level * 5, 100) > 60:
-					brickFab = Tank
-				
-				var newBrick = brickFab.create(Vector2(margin_x + (70 * c), margin_up + (70 * r)))
-				GameManager.bricksLeft += 1
+				var newBrick = brickObject.instantiate()
 				add_child(newBrick)
+				GameManager.bricksLeft += 1
+				newBrick.position = Vector2(margin_x + (70 * c), margin_up + (70 * r))
 				
+				if GameManager.level > 1:
+					var randomNumberHealth = randi_range(GameManager.level * 5, 100)
+					if randomNumberHealth > 60:
+						newBrick.get_node('Brick_Sprite').texture = brick2
+						newBrick.setHealth(2)
 				#TODO: add 3rd enemy
 				var sprite = newBrick.get_node('Brick_Sprite') 
 				var randomNumberColors = randi_range(0,3)
@@ -86,3 +93,10 @@ func getColors():
 		Color(0.686275, 0.933333, 0.933333, 1)
 	]
 	return colors
+	
+func get_random_ball_position() -> Vector2:
+	var min_x = 100
+	var max_x = 1850
+	var y_pos = 500
+
+	return Vector2(randi_range(min_x, max_x), y_pos)

@@ -41,6 +41,43 @@ autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CreditsLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ihr8w")
+bbcode_enabled = true
+text = "[font_size=25][/font_size]"
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Upgrades" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ihr8w")
+bbcode_enabled = true
+text = "[font_size=25]Upgrades[/font_size]"
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WidePowerUp" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Buy: Wide Power-up"
+
+[node name="DoubleBallPowerUp" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Buy: Double Ball Power-up"
+
+[node name="BuyInfo" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0.1, 0)
+layout_mode = 2
+theme = ExtResource("2_ihr8w")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Back"
@@ -51,5 +88,6 @@ scale = Vector2(0.029, 0.029)
 texture = ExtResource("2_dl1a4")
 script = ExtResource("4_ihr8w")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/WidePowerUp" to="." method="_on_buy_button_pressed" binds= ["wide"]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/DoubleBallPowerUp" to="." method="_on_buy_button_pressed" binds= ["double_ball"]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

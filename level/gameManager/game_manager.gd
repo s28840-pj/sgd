@@ -1,9 +1,11 @@
 extends Node
 
-var score = 0
+var score = 500
 var level = 1
 var multiplySpeed = 0
 var playerSpriteIndex = 1
+var wide_powerup: bool = false
+var double_ball_powerup: bool = false
 var bricksLeft
 
 func addPoints(points):

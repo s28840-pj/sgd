@@ -10,7 +10,7 @@ radius = 11.0454
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.784091, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Ball" type="CharacterBody2D" groups=["Balls"]]
+[node name="Ball" type="CharacterBody2D"]
 script = ExtResource("1_np5af")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
