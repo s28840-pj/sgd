@@ -4,6 +4,7 @@ var score = 0
 var level = 1
 var multiplySpeed = 0
 var playerSpriteIndex = 1
+var bricksLeft
 
 func addPoints(points):
 	score += points

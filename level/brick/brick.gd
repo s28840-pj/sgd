@@ -20,13 +20,23 @@ func hit():
 		$Brick_Sprite.hide()
 		$CollisionShape2D.disabled = true
 		
-		var bricksLeft = get_tree().get_nodes_in_group('Bricks')
-		if bricksLeft.size() == 1:
+		GameManager.bricksLeft -= 1
+		
+		if GameManager.bricksLeft == 0:
 			get_parent().get_node("Ball").is_active = false
 			GameManager.level += 1
 			get_tree().reload_current_scene()
 		else:
-			#await get_tree().create_timer(0.15).timeout
+			await get_tree().create_timer(0.15).timeout
 			queue_free()
+		
+		#var bricksLeft = get_tree().get_nodes_in_group('Bricks')
+		#if bricksLeft.size() == 1:
+			#get_parent().get_node("Ball").is_active = false
+			#GameManager.level += 1
+			#get_tree().reload_current_scene()
+		#else:
+			#await get_tree().create_timer(0.15).timeout
+			#queue_free()
 	elif health == 1:
 		$Break.show()

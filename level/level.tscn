@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btmee2rxrttte" path="res://art/background.png" id="2_ivpvi"]
 [ext_resource type="PackedScene" uid="uid://doctm8cegyc2y" path="res://pause_menu/pause_menu.tscn" id="2_ktfr2"]
 [ext_resource type="PackedScene" uid="uid://ctl857ofqkyjy" path="res://level/walls/walls.tscn" id="3_qohg2"]
-[ext_resource type="AudioStream" uid="uid://rxejw3fckmx6" path="res://art/themesong.wav" id="6_44x8d"]
+[ext_resource type="AudioStream" uid="uid://rxejw3fckmx6" path="res://art/themesong.wav" id="7_ivpvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkbyq"]
 size = Vector2(1854, 20)
@@ -45,7 +45,7 @@ position = Vector2(960, 10)
 shape = SubResource("RectangleShape2D_vkbyq")
 
 [node name="themeSong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_44x8d")
+stream = ExtResource("7_ivpvi")
 bus = &"music"
 
 [connection signal="body_entered" from="Death_Zone" to="Ball" method="_on_death_zone_body_entered"]

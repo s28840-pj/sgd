@@ -17,6 +17,7 @@ var margin_x = 85
 func _ready() -> void:
 	
 	GameManager.show_canvas()
+	GameManager.bricksLeft = 0
 	
 	$Player.changePlayerSprites(GameManager.playerSpriteIndex)
 	
@@ -43,6 +44,7 @@ func setupLevel():
 				
 				var newBrick = brickObject.instantiate()
 				add_child(newBrick)
+				GameManager.bricksLeft += 1
 				newBrick.position = Vector2(margin_x + (70 * c), margin_up + (70 * r))
 				
 				if GameManager.level > 1:
