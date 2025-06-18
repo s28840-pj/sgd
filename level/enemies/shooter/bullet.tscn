@@ -4,13 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://d0kn4gstpbisw" path="res://art/bullet.png" id="1_u8ahj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnwyh"]
-radius = 5.0
+radius = 7.0
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_dnwyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(2, 2)
 texture = ExtResource("1_u8ahj")
+region_rect = Rect2(0, 0, 50, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dnwyh")

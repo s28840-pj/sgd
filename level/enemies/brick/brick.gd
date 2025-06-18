@@ -2,7 +2,9 @@ class_name Brick
 extends RigidBody2D
 
 static func create(pos: Vector2) -> Brick:
-	const scene = preload("res://level/enemies/brick/brick.tscn")
+	return __create(preload("res://level/enemies/brick/brick.tscn"), pos)
+
+static func __create(scene: Resource, pos: Vector2) -> Brick:
 	var instance: Brick = scene.instantiate()
 	instance.position = pos
 	return instance

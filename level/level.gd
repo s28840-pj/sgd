@@ -38,7 +38,7 @@ func setupLevel():
 			var randomNumber = randi_range(0,2)
 			if randomNumber > 0:
 				
-				var brickFab = Shooter
+				var brickFab = Sniper
 				if GameManager.level > 1 && randi_range(GameManager.level * 5, 100) > 60:
 					brickFab = Tank
 				

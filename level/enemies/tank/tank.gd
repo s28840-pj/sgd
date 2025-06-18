@@ -1,11 +1,8 @@
 class_name Tank
 extends Brick
 
-static func create(pos: Vector2) -> Tank:
-	const scene = preload("res://level/enemies/tank/tank.tscn")
-	var instance = scene.instantiate()
-	instance.position = pos
-	return instance
+static func create(pos: Vector2) -> Brick:
+	return __create(preload("res://level/enemies/tank/tank.tscn"), pos)
 
 func _init() -> void:
 	health = 2
