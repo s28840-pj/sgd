@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://rxejw3fckmx6"
-path="res://.godot/imported/themesong.wav-f585424eca2690198878f24740caae4a.sample"
+path="res://.godot/imported/themesong.wav-87387c28e94fc88286b30716a8fd91cc.sample"
 
 [deps]
 
-source_file="res://game/themesong.wav"
-dest_files=["res://.godot/imported/themesong.wav-f585424eca2690198878f24740caae4a.sample"]
+source_file="res://art/themesong.wav"
+dest_files=["res://.godot/imported/themesong.wav-87387c28e94fc88286b30716a8fd91cc.sample"]
 
 [params]
 

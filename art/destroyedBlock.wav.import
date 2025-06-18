@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d1iuk223oh8ph"
-path="res://.godot/imported/destroyedBlock.wav-497c2cdfa3323bff5041b4a5b8f2d9fd.sample"
+path="res://.godot/imported/destroyedBlock.wav-336952a16dc154ec082efa369ef4e8c9.sample"
 
 [deps]
 
-source_file="res://game/destroyedBlock.wav"
-dest_files=["res://.godot/imported/destroyedBlock.wav-497c2cdfa3323bff5041b4a5b8f2d9fd.sample"]
+source_file="res://art/destroyedBlock.wav"
+dest_files=["res://.godot/imported/destroyedBlock.wav-336952a16dc154ec082efa369ef4e8c9.sample"]
 
 [params]
 

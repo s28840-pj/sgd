@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://funet1ldfpvf"]
-
-[ext_resource type="PackedScene" uid="uid://dthyblbci3o3w" path="res://game/brick.tscn" id="1_s4oog"]
-[ext_resource type="Script" uid="uid://wlae5bfsm7nq" path="res://game/enemy.gd" id="2_0fifv"]
-
-[node name="enemy" instance=ExtResource("1_s4oog")]
-script = ExtResource("2_0fifv")

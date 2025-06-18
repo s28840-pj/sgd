@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://cvw8rqob8ndur" path="res://options_menu/master_volume_slider.gd" id="2_wn31l"]
 [ext_resource type="Script" uid="uid://c5m5vmgcuxsce" path="res://options_menu/music_volume_slider.gd" id="3_b0obc"]
 [ext_resource type="Script" uid="uid://bbdt22qnmrx5k" path="res://options_menu/master_muted.gd" id="3_cux0y"]
-[ext_resource type="Script" uid="uid://oq0j27io13lk" path="res://pause_menu/cursor.gd" id="3_uwtdo"]
 [ext_resource type="Script" uid="uid://cfoseprbqdwqm" path="res://options_menu/sfx_volume_slider.gd" id="4_cux0y"]
 [ext_resource type="Script" uid="uid://bn2sebmp303br" path="res://options_menu/music_muted.gd" id="5_teyq6"]
 [ext_resource type="Script" uid="uid://i3m36r43qauo" path="res://options_menu/sfx_muted.gd" id="7_p6csp"]
+[ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="10_p6csp"]
 
 [node name="Pause_Menu" type="Control"]
 layout_mode = 3
@@ -127,7 +127,7 @@ text = "Main Menu"
 position = Vector2(167, -67)
 scale = Vector2(0.029, 0.029)
 texture = ExtResource("2_rd7dy")
-script = ExtResource("3_uwtdo")
+script = ExtResource("10_p6csp")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume_Container/Master_Volume/Master_Muted" to="MarginContainer/VBoxContainer/Volume_Container/Master_Volume/Master_Muted" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume_Container/Music_Volume/Music_Muted" to="MarginContainer/VBoxContainer/Volume_Container/Music_Volume/Music_Muted" method="_on_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctl857ofqkyjy"]
+
+[ext_resource type="Texture2D" uid="uid://cwu73psn51rpi" path="res://art/wall.png" id="1_22vht"]
+[ext_resource type="Script" uid="uid://bdyoktqkw2s2n" path="res://level/walls/walls.gd" id="1_dpxod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkbyq"]
+size = Vector2(32, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktfr2"]
+size = Vector2(32, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22vht"]
+size = Vector2(1920, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpxod"]
+size = Vector2(1854, 20)
+
+[node name="Walls" type="StaticBody2D"]
+script = ExtResource("1_dpxod")
+
+[node name="Left_Wall_Sprite" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(16, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_22vht")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 2160)
+
+[node name="Left_Wall_Collision" type="CollisionShape2D" parent="."]
+position = Vector2(16, 540)
+shape = SubResource("RectangleShape2D_vkbyq")
+
+[node name="Right_Wall_Sprite" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(1904, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_22vht")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 2160)
+
+[node name="Right_Wall_Collision" type="CollisionShape2D" parent="."]
+position = Vector2(1904, 540)
+shape = SubResource("RectangleShape2D_ktfr2")
+
+[node name="Up_Wall_Collision" type="CollisionShape2D" parent="."]
+position = Vector2(960, 16)
+shape = SubResource("RectangleShape2D_22vht")
+
+[node name="Cheat_Zone" type="CollisionShape2D" parent="."]
+position = Vector2(960, 600)
+shape = SubResource("RectangleShape2D_dpxod")
+disabled = true

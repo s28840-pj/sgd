@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brshfsy6i2p1u" path="res://game_over_screen/game_over.gd" id="1_2wigc"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_3wsfb"]
-[ext_resource type="Script" uid="uid://dm6mjemxifv7c" path="res://game_over_screen/cursor.gd" id="3_lfqig"]
+[ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="3_3wsfb"]
 
 [node name="Game Over" type="Control"]
 layout_mode = 3
@@ -101,7 +101,7 @@ text = "Main Menu"
 position = Vector2(72, -40)
 scale = Vector2(0.0293333, 0.0293333)
 texture = ExtResource("2_3wsfb")
-script = ExtResource("3_lfqig")
+script = ExtResource("3_3wsfb")
 
 [connection signal="text_submitted" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
