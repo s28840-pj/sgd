@@ -23,10 +23,8 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.bounce(collision.get_normal())
 			if collision.get_collider().has_method("hit"):
 				collision.get_collider().hit()
-			if collision.get_collider().has_method("changeSprite"):
-				collision.get_collider().changeSprite(2)
-				await get_tree().create_timer(0.2).timeout
-				collision.get_collider().changeSprite(1)
+			if collision.get_collider().has_method("playerWasHit"):
+				collision.get_collider().playerWasHit()
 			
 		if (velocity.y > 0 and velocity.y < 100):
 			velocity.y = -200
