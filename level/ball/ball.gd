@@ -19,9 +19,7 @@ func _physics_process(delta: float) -> void:
 			if collider is Brick:
 				collider.hit()
 			if collider is Player:
-				collider.changeSprite(2)
-				await get_tree().create_timer(0.2).timeout
-				collider.changeSprite(1)
+				collision.get_collider().playerWasHit()
 			
 		if (velocity.y > 0 and velocity.y < 100):
 			velocity.y = -200
