@@ -2,16 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxu5myaar7mt"
-path="res://.godot/imported/player1idle.png-2e437c5aac1eed7e52170197fc0b7e26.ctex"
+<<<<<<< Updated upstream:art/player1hit.png.import
+uid="uid://dw8i7nps2o0uw"
+path="res://.godot/imported/player1hit.png-f8652f204c7347fcf68e5c259894fbdd.ctex"
+=======
+uid="uid://dvpkqld7ngqoe"
+path="res://.godot/imported/player1hit.png-08673f196bc4f0acf6f9bdd9b8ff56e8.ctex"
+>>>>>>> Stashed changes:art/players/player1hit.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player1idle.png"
-dest_files=["res://.godot/imported/player1idle.png-2e437c5aac1eed7e52170197fc0b7e26.ctex"]
+source_file="res://art/players/player1hit.png"
+dest_files=["res://.godot/imported/player1hit.png-08673f196bc4f0acf6f9bdd9b8ff56e8.ctex"]
 
 [params]
 

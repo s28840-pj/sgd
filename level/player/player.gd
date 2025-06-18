@@ -4,10 +4,17 @@ extends CharacterBody2D
 @export var SPEED: float = 750.0
 @export var scale_multiplier: float = 2.0
 
+<<<<<<< Updated upstream
 @onready var sprite = $Player_Sprite
 @onready var collision_shape = $CollisionShape2D
 @onready var player = preload("res://art/player1.png")
 @onready var playerhit = preload("res://art/player1hit.png")
+=======
+@onready var playerIdle = preload("res://art/players/player1idle.png")
+@onready var playerHit = preload("res://art/players/player1hit.png")
+@onready var playerRun1 = preload("res://art/players/player1run1.png")
+@onready var playerRun2 = preload("res://art/players/player1run2.png")
+>>>>>>> Stashed changes
 
 func _ready() -> void:
 	initialize_player_for_game()
@@ -29,6 +36,7 @@ func apply_width_inc():
 
 func changePlayerSprites(index:int):
 	if index == 1:
+<<<<<<< Updated upstream
 		player = preload("res://art/player1.png")
 		playerhit = preload("res://art/player1hit.png")
 		changeSprite(1)
@@ -37,6 +45,29 @@ func changePlayerSprites(index:int):
 		#player = preload("res://art/player2.png")
 		#playerhit = preload("res://art/player2hit.png")
 		#changeSprite(1)
+=======
+		playerIdle = preload("res://art/players/player1idle.png")
+		playerHit = preload("res://art/players/player1hit.png")
+		playerRun1 = preload("res://art/players/player1run1.png")
+		playerRun2 = preload("res://art/players/player1run2.png")
+		changeSprite(1)
+	if index == 2:
+		playerIdle = preload("res://art/players/player2idle.png")
+		playerHit = preload("res://art/players/player2hit.png")
+		playerRun1 = preload("res://art/players/player2run1.png")
+		playerRun2 = preload("res://art/players/player2run2.png")
+		changeSprite(1)
+	if index == 3:
+		playerIdle = preload("res://art/players/player3idle.png")
+		playerHit = preload("res://art/players/player3hit.png")
+		playerRun1 = preload("res://art/players/player3run1.png")
+		playerRun2 = preload("res://art/players/player3run2.png")
+	if index == 4:
+		playerIdle = preload("res://art/players/player4idle.png")
+		playerHit = preload("res://art/players/player4hit.png")
+		playerRun1 = preload("res://art/players/player4run1.png")
+		playerRun2 = preload("res://art/players/player4run2.png")
+>>>>>>> Stashed changes
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
