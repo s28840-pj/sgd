@@ -43,10 +43,13 @@ func setupLevel():
 			var randomNumber = randi_range(0,2)
 			if randomNumber > 0:
 				
-				var newBrick = brickObject.instantiate()
-				add_child(newBrick)
+				var brickFab = Sniper
+				if GameManager.level > 1 && randi_range(GameManager.level * 5, 100) > 60:
+					brickFab = Tank
+
+				var newBrick = brickFab.create(Vector2(margin_x + (70 * c), margin_up + (70 * r)))
 				GameManager.bricksLeft += 1
-				newBrick.position = Vector2(margin_x + (70 * c), margin_up + (70 * r))
+				add_child(newBrick)
 				
 				if GameManager.level > 1:
 					var randomNumberHealth = randi_range(GameManager.level * 5, 100)

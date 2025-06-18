@@ -21,10 +21,11 @@ func _physics_process(delta: float) -> void:
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			velocity = velocity.bounce(collision.get_normal())
-			if collision.get_collider().has_method("hit"):
-				collision.get_collider().hit()
-			if collision.get_collider().has_method("playerWasHit"):
-				collision.get_collider().playerWasHit()
+			var collider = collision.get_collider()
+			if collider is Brick:
+				collider.hit()
+			if collider is Player:
+				collider.playerWasHit()
 			
 		if (velocity.y > 0 and velocity.y < 100):
 			velocity.y = -200
