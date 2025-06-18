@@ -15,12 +15,13 @@ func _physics_process(delta: float) -> void:
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			velocity = velocity.bounce(collision.get_normal())
-			if collision.get_collider().has_method("hit"):
-				collision.get_collider().hit()
-			if collision.get_collider().has_method("changeSprite"):
-				collision.get_collider().changeSprite(2)
+			var collider = collision.get_collider()
+			if collider is Brick:
+				collider.hit()
+			if collider is Player:
+				collider.changeSprite(2)
 				await get_tree().create_timer(0.2).timeout
-				collision.get_collider().changeSprite(1)
+				collider.changeSprite(1)
 			
 		if (velocity.y > 0 and velocity.y < 100):
 			velocity.y = -200

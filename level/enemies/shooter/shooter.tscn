@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtj2201rckbxy"]
+
+[ext_resource type="PackedScene" uid="uid://cmg6fxtyntdqy" path="res://level/enemies/brick/brick.tscn" id="1_oi3yj"]
+[ext_resource type="Script" uid="uid://d2hsgluhmdgfc" path="res://level/enemies/shooter/shooter.gd" id="2_8k2fd"]
+
+[node name="Shooter" instance=ExtResource("1_oi3yj")]
+script = ExtResource("2_8k2fd")

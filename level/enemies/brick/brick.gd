@@ -1,11 +1,15 @@
+class_name Brick
 extends RigidBody2D
+
+static func create(pos: Vector2) -> Brick:
+	const scene = preload("res://level/enemies/brick/brick.tscn")
+	var instance: Brick = scene.instantiate()
+	instance.position = pos
+	return instance
 
 var health = 1
 
-func setHealth(value:int):
-	health = value
-
-func hit():
+func hit() -> void:
 	health -= 1
 	if health == 0:
 		if $Break.visible == true:
