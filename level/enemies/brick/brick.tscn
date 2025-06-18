@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmg6fxtyntdqy"]
 
-[ext_resource type="Texture2D" uid="uid://d1axe060kuaya" path="res://art/brick.png" id="1_gy535"]
+[ext_resource type="Texture2D" uid="uid://d1axe060kuaya" path="res://art/brick1.png" id="1_gy535"]
 [ext_resource type="Script" uid="uid://b2cb7u1ex0xnn" path="res://level/enemies/brick/brick.gd" id="1_pslur"]
 [ext_resource type="Texture2D" uid="uid://bqx35t420mdhj" path="res://art/crack.png" id="3_853qt"]
 [ext_resource type="AudioStream" uid="uid://f1xcjdeygf6t" path="res://art/destroyedBlock.wav" id="4_6yndv"]
@@ -33,3 +33,4 @@ gravity = Vector2(0, -980)
 
 [node name="Break_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_6yndv")
+bus = &"sfx"
