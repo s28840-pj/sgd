@@ -1,11 +1,5 @@
 extends Node2D
 
-@onready var brickObject = preload("res://level/brick/brick.tscn")
-#@onready var wallObject = preload("res://level/walls/walls.tscn")
-
-const brick1 = preload("res://art/brick1.png")
-const brick2 = preload("res://art/brick2.png")
-
 @onready var pause_menu = $Camera2D/Pause_Menu
 var paused = false
 
@@ -51,11 +45,6 @@ func setupLevel():
 				GameManager.bricksLeft += 1
 				add_child(newBrick)
 				
-				if GameManager.level > 1:
-					var randomNumberHealth = randi_range(GameManager.level * 5, 100)
-					if randomNumberHealth > 60:
-						newBrick.get_node('Brick_Sprite').texture = brick2
-						newBrick.setHealth(2)
 				#TODO: add 3rd enemy
 				var sprite = newBrick.get_node('Brick_Sprite') 
 				var randomNumberColors = randi_range(0,3)
