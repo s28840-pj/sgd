@@ -27,7 +27,7 @@ func _set_button_state(index: int, selected: bool) -> void:
 	button.text = "Selected" if selected else "Select"
 
 func _on_play_pressed() -> void:
-	GameManager.level = 1
+	GameManager.level = 10
 	GameManager.score = 0
 	get_tree().change_scene_to_file("res://level/level.tscn")
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmg6fxtyntdqy"]
+[gd_scene load_steps=6 format=3 uid="uid://cmg6fxtyntdqy"]
 
-[ext_resource type="Texture2D" uid="uid://d1axe060kuaya" path="res://art/brick.png" id="1_gy535"]
-[ext_resource type="Texture2D" uid="uid://bqx35t420mdhj" path="res://art/crack.png" id="3_853qt"]
+[ext_resource type="Script" uid="uid://b2cb7u1ex0xnn" path="res://level/enemies/brick/brick.gd" id="1_akcwn"]
+[ext_resource type="Texture2D" uid="uid://j62la2em51bm" path="res://art/bricks/Brick1.png" id="1_t1jxm"]
+[ext_resource type="Texture2D" uid="uid://cbl80hj41f6r0" path="res://art/bricks/Break.png" id="3_akcwn"]
 [ext_resource type="AudioStream" uid="uid://f1xcjdeygf6t" path="res://art/destroyedBlock.wav" id="4_6yndv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pslur"]
@@ -9,13 +10,17 @@ size = Vector2(64, 64)
 
 [node name="Brick" type="RigidBody2D" groups=["Bricks"]]
 gravity_scale = 0.0
+script = ExtResource("1_akcwn")
 
 [node name="Brick_Sprite" type="Sprite2D" parent="." groups=["Brick"]]
-texture = ExtResource("1_gy535")
+texture_filter = 1
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("1_t1jxm")
 
 [node name="Break" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("3_853qt")
+scale = Vector2(0.032, 0.032)
+texture = ExtResource("3_akcwn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pslur")

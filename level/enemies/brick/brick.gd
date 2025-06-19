@@ -7,7 +7,7 @@ static func create(pos: Vector2) -> Brick:
 	return __create(preload("res://level/enemies/brick/brick.tscn"), pos)
 
 static func __create(scene: Resource, pos: Vector2) -> Brick:
-	var instance: Brick = scene.instantiate()
+	var instance = scene.instantiate() as Brick
 	instance.position = pos
 	return instance
 

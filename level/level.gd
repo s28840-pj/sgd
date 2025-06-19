@@ -65,9 +65,14 @@ func setupLevel():
 			var randomNumber = randi_range(0,2)
 			if randomNumber > 0:
 				
-				var brickFab: GDScript = Sniper
-				if GameManager.level > 1 && randi_range(GameManager.level * 5, 100) > 60:
+				var brickFab: GDScript = Brick
+				var random =  randi_range(GameManager.level * 5, 100)
+				if GameManager.level > 1 && random > 60:
 					brickFab = Tank
+				if GameManager.level > 2 && random > 80:
+					brickFab = Shooter
+				if GameManager.level > 3 && random > 90:
+					brickFab = Sniper
 
 				create_brick(brickFab, Vector2(margin_x + (70 * c), margin_up + (70 * r)))
 

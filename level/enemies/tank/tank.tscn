@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://cmg6fxtyntdqy" path="res://level/enemies/brick/brick.tscn" id="1_4w2qo"]
 [ext_resource type="Script" uid="uid://rn6xe2ydbyeb" path="res://level/enemies/tank/tank.gd" id="2_w3qhi"]
-[ext_resource type="Texture2D" uid="uid://sfvx5ro8ojvn" path="res://art/brick2.png" id="3_ll4f8"]
+[ext_resource type="Texture2D" uid="uid://cfas5l4rjh6su" path="res://art/bricks/Brick2.png" id="3_4w2qo"]
 
 [node name="Tank" instance=ExtResource("1_4w2qo")]
 script = ExtResource("2_w3qhi")
 
 [node name="Brick_Sprite" parent="." index="0"]
-texture = ExtResource("3_ll4f8")
+texture = ExtResource("3_4w2qo")

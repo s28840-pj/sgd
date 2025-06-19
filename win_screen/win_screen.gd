@@ -31,6 +31,8 @@ func _ready() -> void:
 	
 	GameManager.hide_canvas()
 	
+	GameManager.level = 10
+	
 	score_text.text = str(GameManager.score)
 	level_text.text = str(GameManager.level)
 	
