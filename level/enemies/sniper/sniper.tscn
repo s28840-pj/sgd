@@ -5,3 +5,6 @@
 
 [node name="Sniper" instance=ExtResource("1_mobxj")]
 script = ExtResource("2_6h8wx")
+
+[node name="Break_Sound" parent="." index="4"]
+bus = &"Master"
