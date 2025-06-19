@@ -19,7 +19,6 @@ const colors = [
 
 func _ready() -> void:
 	GameManager.show_canvas()
-	GameManager.bricksLeft = 0
 	
 	$Player.changePlayerSprites(GameManager.playerSpriteIndex)
 	
@@ -109,6 +108,9 @@ func _on_Brick_got_hit(brick: Brick) -> void:
 	bricks -= 1
 	if bricks == 0:
 		GameManager.level += 1
+		if GameManager.level == 11:
+			get_tree().change_scene_to_file("res://win_screen/win_screen.tscn")
+			return
 		get_tree().reload_current_scene()
 	else:
 		await get_tree().create_timer(0.15).timeout
