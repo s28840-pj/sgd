@@ -49,22 +49,6 @@ func _physics_process(delta: float) -> void:
 				d = d.rotated(PI / 4)
 			velocity = d * savedSpeed
 
-
-func create_double_ball():
-	var parent_level = get_parent()
-
-	var new_ball = Ball.create()
-	new_ball.name = "Ball_Clone_" + str(Time.get_ticks_msec())
-	parent_level.spawn_ball(new_ball)
-	new_ball.global_position = parent_level.get_random_ball_position()
-	new_ball.is_active = true
-	var random_direction_x = randf_range(-1.0, 1.0)
-	if abs(random_direction_x) < 0.2: 
-		random_direction_x = 0.5 if random_direction_x >= 0 else -0.5
-		
-	var initial_velocity_y = new_ball.speed
-	new_ball.velocity = Vector2(random_direction_x * new_ball.speed, -initial_velocity_y)
-
 func _on_death_zone_body_entered() -> void:
 	queue_free()
 	exited_screen.emit()

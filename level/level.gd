@@ -23,10 +23,12 @@ func _ready() -> void:
 	
 	setupLevel()
 
-func spawn_ball(ball: Ball) -> void:
+func spawn_ball() -> Ball:
+	var ball = Ball.create()
 	ball.exited_screen.connect(_on_ball_exit)
 	add_child(ball)
 	balls += 1
+	return ball
 
 func create_brick(fab: GDScript, pos: Vector2) -> void:
 	var brick: Brick = fab.create(pos)
@@ -50,7 +52,7 @@ func create_brick(fab: GDScript, pos: Vector2) -> void:
 func setupLevel():
 	$themeSong.playing = true
 	
-	spawn_ball(Ball.create())
+	spawn_ball()
 	
 	rows = 2 + GameManager.level
 	
@@ -69,21 +71,25 @@ func setupLevel():
 
 				create_brick(brickFab, Vector2(margin_x + (70 * c), margin_up + (70 * r)))
 
+func activate_double_ball() -> void:
+	var new_ball = spawn_ball()
+	new_ball.name = "Ball_Clone_" + str(Time.get_ticks_msec())
+	new_ball.global_position = get_random_ball_position()
+	new_ball.is_active = true
+	var random_direction_x = randf_range(-1.0, 1.0)
+	if abs(random_direction_x) < 0.2: 
+		random_direction_x = 0.5 if random_direction_x >= 0 else -0.5
+		
+	var initial_velocity_y = new_ball.speed
+	new_ball.velocity = Vector2(random_direction_x * new_ball.speed, -initial_velocity_y)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
 		
-	if Input.is_action_just_pressed("activate_double_ball"):
-		if GameManager.double_ball_powerups > 0:
-			var existing_ball = $Ball
-			if existing_ball:
-				existing_ball.create_double_ball()
-				GameManager.double_ball_powerups -= 1
-			else:
-				printerr("nie znaleziono oryg kulki")
-		else:
-			print("brak ladunkow db ball")
+	if Input.is_action_just_pressed("activate_double_ball") && GameManager.double_ball_powerups > 0:
+		GameManager.double_ball_powerups -= 1
+		activate_double_ball()
 	
 	GameManager.multiplySpeed = GameManager.score / 20
 	if GameManager.multiplySpeed > 0:
