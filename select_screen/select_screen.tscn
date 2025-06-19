@@ -1,0 +1,163 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3m3djgwli0dm"]
+
+[ext_resource type="Script" uid="uid://dxkbobcbuk5qs" path="res://select_screen/select_screen.gd" id="1_1lxq7"]
+[ext_resource type="Texture2D" uid="uid://hnlsl2offn2p" path="res://art/players_pixel/player1idle.png" id="2_7mrjn"]
+[ext_resource type="Texture2D" uid="uid://cee6e63p1emei" path="res://art/players_pixel/player2idle.png" id="3_4alp2"]
+[ext_resource type="Texture2D" uid="uid://dclgws6jmlmld" path="res://art/players_pixel/player3idle.png" id="4_3pypb"]
+[ext_resource type="Texture2D" uid="uid://dil6v82feyo0a" path="res://art/players_pixel/player4idle.png" id="5_uc1v3"]
+[ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="6_lyf50"]
+[ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="7_egpk4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_no03y"]
+
+[node name="Select_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1lxq7")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 120.0
+offset_right = 150.0
+offset_bottom = 170.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2"]
+clip_contents = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_no03y")
+bbcode_enabled = true
+text = "[font_size=40]Choose Player[/font_size]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -262.0
+offset_top = 200.0
+offset_right = 262.0
+offset_bottom = 350.0
+grow_horizontal = 2
+
+[node name="Player_1_Container" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Player_1_Texture" type="TextureRect" parent="HBoxContainer/Player_1_Container"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_7mrjn")
+
+[node name="Player_1_Button" type="Button" parent="HBoxContainer/Player_1_Container"]
+layout_mode = 2
+text = "Select"
+
+[node name="Player_2_Container" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Player_2_Texture" type="TextureRect" parent="HBoxContainer/Player_2_Container"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_4alp2")
+
+[node name="Player_2_Button" type="Button" parent="HBoxContainer/Player_2_Container"]
+layout_mode = 2
+text = "Select"
+
+[node name="Player_3_Container" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Player_3_Texture" type="TextureRect" parent="HBoxContainer/Player_3_Container"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_3pypb")
+
+[node name="Player_3_Button" type="Button" parent="HBoxContainer/Player_3_Container"]
+layout_mode = 2
+text = "Select"
+
+[node name="Player_4_Container" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Player_4_Texture" type="TextureRect" parent="HBoxContainer/Player_4_Container"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_uc1v3")
+
+[node name="Player_4_Button" type="Button" parent="HBoxContainer/Player_4_Container"]
+layout_mode = 2
+text = "Select"
+
+[node name="Players_Main_Container" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = 200.0
+offset_right = 256.0
+offset_bottom = 350.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -68.0
+offset_right = 75.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(72, -40)
+scale = Vector2(0.0293333, 0.0293333)
+texture = ExtResource("6_lyf50")
+script = ExtResource("7_egpk4")
+
+[connection signal="pressed" from="HBoxContainer/Player_1_Container/Player_1_Button" to="." method="_on_player_1_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Player_2_Container/Player_2_Button" to="." method="_on_player_2_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Player_3_Container/Player_3_Button" to="." method="_on_player_3_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Player_4_Container/Player_4_Button" to="." method="_on_player_4_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

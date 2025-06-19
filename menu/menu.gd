@@ -11,7 +11,7 @@ func _ready() -> void:
 func _on_play_pressed() -> void:
 	GameManager.level = 1
 	GameManager.score = 0
-	get_tree().change_scene_to_file("res://level/level.tscn")
+	get_tree().change_scene_to_file("res://select_screen/select_screen.tscn")
 
 func _on_shop_pressed() -> void:
 	get_tree().change_scene_to_file("res://shop_menu/shop_menu.tscn")
