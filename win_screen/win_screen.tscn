@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c32a4huxnigkx"]
+[gd_scene load_steps=5 format=3 uid="uid://c32a4huxnigkx"]
 
 [ext_resource type="Script" uid="uid://dycxciugl23dr" path="res://win_screen/win_screen.gd" id="1_ket4b"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_o635i"]
 [ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="3_jec3e"]
+[ext_resource type="Texture2D" uid="uid://j8qaeiubtyqp" path="res://art/backgrounds/Green.png" id="4_wpp0q"]
 
 [node name="Win" type="Control"]
 layout_mode = 3
@@ -98,6 +99,14 @@ position = Vector2(72, -40)
 scale = Vector2(0.0293333, 0.0293333)
 texture = ExtResource("2_o635i")
 script = ExtResource("3_jec3e")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+texture_repeat = 2
+position = Vector2(960, 540)
+texture = ExtResource("4_wpp0q")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [connection signal="text_submitted" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

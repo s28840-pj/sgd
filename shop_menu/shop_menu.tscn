@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://rvryrb260w8d"]
+[gd_scene load_steps=6 format=3 uid="uid://rvryrb260w8d"]
 
 [ext_resource type="Script" uid="uid://c4d84ev6o6sfj" path="res://shop_menu/shop_menu.gd" id="1_d3ese"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_dl1a4"]
 [ext_resource type="Theme" uid="uid://bytvsetogekp" path="res://Main Theme.tres" id="2_ihr8w"]
 [ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="4_ihr8w"]
+[ext_resource type="Texture2D" uid="uid://bdsb6f1m7527d" path="res://art/backgrounds/Blue.png" id="5_k0iiv"]
 
 [node name="Shop_Menu" type="Control"]
 layout_mode = 3
@@ -87,6 +88,14 @@ position = Vector2(41, -37)
 scale = Vector2(0.029, 0.029)
 texture = ExtResource("2_dl1a4")
 script = ExtResource("4_ihr8w")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+texture_repeat = 2
+position = Vector2(960, 540)
+texture = ExtResource("5_k0iiv")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/WidePowerUp" to="." method="_on_buy_button_pressed" binds= ["wide"]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/DoubleBallPowerUp" to="." method="_on_buy_button_pressed" binds= ["double_ball"]]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4t1ks03o8a6y"]
+[gd_scene load_steps=5 format=3 uid="uid://b4t1ks03o8a6y"]
 
 [ext_resource type="Script" uid="uid://brshfsy6i2p1u" path="res://game_over_screen/game_over.gd" id="1_2wigc"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_3wsfb"]
 [ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="3_3wsfb"]
+[ext_resource type="Texture2D" uid="uid://bdsb6f1m7527d" path="res://art/backgrounds/Blue.png" id="4_lfqig"]
 
 [node name="Game Over" type="Control"]
 layout_mode = 3
@@ -102,6 +103,14 @@ position = Vector2(72, -40)
 scale = Vector2(0.0293333, 0.0293333)
 texture = ExtResource("2_3wsfb")
 script = ExtResource("3_3wsfb")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 0.461017, 0.392737, 0.156863)
+texture_repeat = 2
+position = Vector2(960, 540)
+texture = ExtResource("4_lfqig")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [connection signal="text_submitted" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

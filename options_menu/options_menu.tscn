@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ttjw675e0aoy"]
+[gd_scene load_steps=11 format=3 uid="uid://ttjw675e0aoy"]
 
 [ext_resource type="Script" uid="uid://c8bf376wjq7ag" path="res://options_menu/options_menu.gd" id="1_4j7hp"]
 [ext_resource type="Script" uid="uid://cvw8rqob8ndur" path="res://options_menu/master_volume_slider.gd" id="2_3fu6l"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cfoseprbqdwqm" path="res://options_menu/sfx_volume_slider.gd" id="4_qc3td"]
 [ext_resource type="Script" uid="uid://i3m36r43qauo" path="res://options_menu/sfx_muted.gd" id="6_ftnx2"]
 [ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="9_ftnx2"]
+[ext_resource type="Texture2D" uid="uid://bdsb6f1m7527d" path="res://art/backgrounds/Blue.png" id="10_kw0k2"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -118,6 +119,14 @@ position = Vector2(71, -27)
 scale = Vector2(0.029, 0.029)
 texture = ExtResource("2_y0hpd")
 script = ExtResource("9_ftnx2")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+texture_repeat = 2
+position = Vector2(960, 540)
+texture = ExtResource("10_kw0k2")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [connection signal="pressed" from="MarginContainer/Options/Volume_Container/Master_Volume/Master_Muted" to="MarginContainer/Options/Volume_Container/Master_Volume/Master_Muted" method="_on_pressed"]
 [connection signal="value_changed" from="MarginContainer/Options/Volume_Container/Master_Volume/Master_Volume_Slider" to="MarginContainer/Options/Volume_Container/Master_Volume/Master_Volume_Slider" method="_on_value_changed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3m3djgwli0dm"]
+[gd_scene load_steps=10 format=3 uid="uid://c3m3djgwli0dm"]
 
 [ext_resource type="Script" uid="uid://dxkbobcbuk5qs" path="res://select_screen/select_screen.gd" id="1_1lxq7"]
 [ext_resource type="Texture2D" uid="uid://hnlsl2offn2p" path="res://art/players_pixel/player1idle.png" id="2_7mrjn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dil6v82feyo0a" path="res://art/players_pixel/player4idle.png" id="5_uc1v3"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="6_lyf50"]
 [ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="7_egpk4"]
+[ext_resource type="Texture2D" uid="uid://bdsb6f1m7527d" path="res://art/backgrounds/Blue.png" id="8_7mrjn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_no03y"]
 
@@ -154,6 +155,14 @@ position = Vector2(72, -40)
 scale = Vector2(0.0293333, 0.0293333)
 texture = ExtResource("6_lyf50")
 script = ExtResource("7_egpk4")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+texture_repeat = 2
+position = Vector2(960, 540)
+texture = ExtResource("8_7mrjn")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [connection signal="pressed" from="HBoxContainer/Player_1_Container/Player_1_Button" to="." method="_on_player_1_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Player_2_Container/Player_2_Button" to="." method="_on_player_2_button_pressed"]

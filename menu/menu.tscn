@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf42jpws1rgdq"]
+[gd_scene load_steps=7 format=3 uid="uid://cf42jpws1rgdq"]
 
 [ext_resource type="Script" uid="uid://cj5m7jfigs6i2" path="res://menu/menu.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://b0uedlomuu6bu" path="res://art/cursor.png" id="2_g18jx"]
 [ext_resource type="Theme" uid="uid://bytvsetogekp" path="res://Main Theme.tres" id="2_pbjm4"]
 [ext_resource type="Script" uid="uid://3iejfr66bnvt" path="res://menu/cursor.gd" id="3_6nwqt"]
+[ext_resource type="Texture2D" uid="uid://bdsb6f1m7527d" path="res://art/backgrounds/Blue.png" id="5_svuvw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbjm4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -80,6 +81,14 @@ position = Vector2(72, -40)
 scale = Vector2(0.0293333, 0.0293333)
 texture = ExtResource("2_g18jx")
 script = ExtResource("3_6nwqt")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+texture_repeat = 2
+position = Vector2(960, 540)
+texture = ExtResource("5_svuvw")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Shop" to="." method="_on_shop_pressed"]
