@@ -14,6 +14,7 @@ static func __create(scene: Resource, pos: Vector2) -> Brick:
 var health = 1
 
 func hit() -> void:
+	$Break_Sound.playing = true
 	health -= 1
 	if health == 0:
 		if $Break.visible == true:
