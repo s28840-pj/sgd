@@ -8,6 +8,7 @@ func _ready() -> void:
 	show_highscores()
 
 func _on_back_pressed() -> void:
+	MenuButtonsSfx.play_button_click()
 	get_tree().change_scene_to_file("res://menu/menu.tscn")
 
 func load_highscores():

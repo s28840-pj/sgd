@@ -8,6 +8,8 @@ var active_balls = 1
 var wide_powerup: bool = false
 var wide_powerup_used: bool = false
 var double_ball_powerups: int = 0
+var player_health: int = 1
+var player_max_health: int = 1
 
 func addPoints(points):
 	score += points
@@ -16,16 +18,18 @@ func hide_canvas():
 	$CanvasLayer/ScoreLabel.hide()
 	$CanvasLayer/LevelLabel.hide()
 	$CanvasLayer/PowerupLabel.hide()
+	$CanvasLayer/HealthLabel.hide()
 
 func show_canvas():
 	$CanvasLayer/ScoreLabel.show()
 	$CanvasLayer/LevelLabel.show()
 	$CanvasLayer/PowerupLabel.show()
+	$CanvasLayer/HealthLabel.show()
 	
 func _process(delta: float) -> void:
 	$CanvasLayer/ScoreLabel.text = "Score: " + str(score)
 	$CanvasLayer/LevelLabel.text = "Level: " + str(level)
-	
+	$CanvasLayer/HealthLabel.text = "Health: " + str(player_health)
 	update_powerup_label()
 
 func update_powerup_label():

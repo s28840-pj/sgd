@@ -27,26 +27,33 @@ func _set_button_state(index: int, selected: bool) -> void:
 	button.text = "Selected" if selected else "Select"
 
 func _on_play_pressed() -> void:
+	MenuButtonsSfx.play_button_click()
 	GameManager.level = 1
 	GameManager.score = 0
 	get_tree().change_scene_to_file("res://level/level.tscn")
 
 func _on_back_pressed() -> void:
+	MenuButtonsSfx.play_button_click()
 	get_tree().change_scene_to_file("res://menu/menu.tscn")
 
 func _on_player_button_pressed(index: int) -> void:
+	MenuButtonsSfx.play_button_click()
 	change_button(GameManager.playerSpriteIndex)
 	GameManager.playerSpriteIndex = index + 1
 	_set_button_state(index, true)
 
 func _on_player_1_button_pressed() -> void:
+	MenuButtonsSfx.play_button_click()
 	_on_player_button_pressed(0)
 
 func _on_player_2_button_pressed() -> void:
+	MenuButtonsSfx.play_button_click()
 	_on_player_button_pressed(1)
 
 func _on_player_3_button_pressed() -> void:
+	MenuButtonsSfx.play_button_click()
 	_on_player_button_pressed(2)
 
 func _on_player_4_button_pressed() -> void:
+	MenuButtonsSfx.play_button_click()
 	_on_player_button_pressed(3)

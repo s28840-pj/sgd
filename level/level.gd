@@ -18,8 +18,14 @@ const colors = [
 ]
 
 func _ready() -> void:
+	MenusMusic.stop()
+	GameManager.player_max_health = 1 + (GameManager.playerSpriteIndex - 1)
+	GameManager.player_health = GameManager.player_max_health
+	print("Level initialized. Player Health set to: ", GameManager.player_health, " (Player Index: ", GameManager.playerSpriteIndex, ")")
 	GameManager.show_canvas()
 	$Player.changePlayerSprites(GameManager.playerSpriteIndex)
+	
+	$Player.got_hit.connect(_on_Player_got_hit) 
 	
 	setupLevel()
 
@@ -122,7 +128,13 @@ func game_over() -> void:
 	get_tree().change_scene_to_file("res://game_over_screen/game_over.tscn")
 
 func _on_Player_got_hit() -> void:
-	game_over()
+	GameManager.player_health -= 1
+	print("Gracz trafiony! Pozostałe zdrowie: ", GameManager.player_health)
+	
+	if GameManager.player_health <= 0:
+		print("Gracz stracił wszystkie życia! Koniec gry.")
+		game_over()
+	
 
 func _on_Brick_got_hit(brick: Brick) -> void:
 	bricks -= 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2bhkkra1dtce"]
+[gd_scene load_steps=5 format=3 uid="uid://c2bhkkra1dtce"]
 
 [ext_resource type="Script" uid="uid://bk768p22gmijq" path="res://level/player/player.gd" id="1_v8c4x"]
 [ext_resource type="Texture2D" uid="uid://hnlsl2offn2p" path="res://art/players_pixel/player1idle.png" id="2_v8c4x"]
+[ext_resource type="AudioStream" uid="uid://oqyfc75k50v0" path="res://art/playerHit.wav" id="3_42to2"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_v8c4x"]
 points = PackedVector2Array(-6, -8, 7, -8, 9, -5, 9, 12, -8, 12, -8, -5)
@@ -19,3 +20,6 @@ texture = ExtResource("2_v8c4x")
 position = Vector2(-7.15256e-07, -8.47033e-22)
 scale = Vector2(5.81, 5.45)
 shape = SubResource("ConvexPolygonShape2D_v8c4x")
+
+[node name="PlayerHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_42to2")

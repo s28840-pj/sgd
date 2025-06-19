@@ -28,6 +28,7 @@ func update_buy_buttons_state():
 		pass
 
 func _on_buy_button_pressed(powerup_id: String) -> void:
+	MenuButtonsSfx.play_button_click()
 	var cost = 0
 	var is_already_activated: bool = false
 	var powerup_name = ""
@@ -73,4 +74,5 @@ func _on_buy_button_pressed(powerup_id: String) -> void:
 		buy_info.show()
 
 func _on_back_pressed() -> void:
+	MenuButtonsSfx.play_button_click()
 	get_tree().change_scene_to_file("res://menu/menu.tscn")

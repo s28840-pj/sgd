@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://level/gameManager/game_manager.tscn"
+MenusMusic="*res://menus_music/audio_stream_player_2d.tscn"
+MenuButtonsSfx="*res://menus_music/menuButtonsSFX.tscn"
 
 [display]
 

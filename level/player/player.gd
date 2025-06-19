@@ -103,6 +103,15 @@ func _process(delta: float) -> void:
 
 func _on_Bullet_entered() -> void:
 	got_hit.emit()
+	$Player_Sprite.modulate = Color(1,0,0)
+	$PlayerHit.playing = true
+	if is_instance_valid(self) and get_tree():
+		await get_tree().create_timer(0.1).timeout # Czekaj 0.2 sekundy
+
+	# Po upływie czasu, jeśli gracz nadal istnieje, przywróć normalny kolor.
+	if is_instance_valid(self):
+		$Player_Sprite.modulate = Color(1, 1, 1) # Przywróć normalny kolor (biały)
+	
 
 func _on_Ball_bounced() -> void:
 	isHit = true
