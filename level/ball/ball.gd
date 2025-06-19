@@ -34,9 +34,6 @@ func _physics_process(delta: float) -> void:
 				collider.hit()
 			if collider is Player:
 				collider._on_Ball_bounced()
-			
-		#if (velocity.y > 0 and velocity.y < 100):
-			#velocity.y = -200
 		if Input.is_action_just_pressed("cheat"):
 			if speed == 5000:
 				speed = savedSpeed

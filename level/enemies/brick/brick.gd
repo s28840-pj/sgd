@@ -1,6 +1,8 @@
 class_name Brick
 extends RigidBody2D
 
+signal got_hit
+
 static func create(pos: Vector2) -> Brick:
 	return __create(preload("res://level/enemies/brick/brick.tscn"), pos)
 
@@ -26,15 +28,7 @@ func hit() -> void:
 		$Brick_Sprite.hide()
 		$CollisionShape2D.disabled = true
 		
-		GameManager.bricksLeft -= 1
-		
-		if GameManager.bricksLeft == 0:
-			get_parent().get_node("Ball").is_active = false
-			GameManager.level += 1
-			get_tree().reload_current_scene()
-		else:
-			await get_tree().create_timer(0.15).timeout
-			queue_free()
+		got_hit.emit(self)
 		
 		#var bricksLeft = get_tree().get_nodes_in_group('Bricks')
 		#if bricksLeft.size() == 1:
