@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://c2bhkkra1dtce" path="res://level/player/player.tscn" id="1_7lnir"]
 [ext_resource type="Script" uid="uid://ura7k4apjab3" path="res://level/level.gd" id="1_vkbyq"]
-[ext_resource type="PackedScene" uid="uid://eggtjci2rok" path="res://level/ball/ball.tscn" id="2_5gx2l"]
 [ext_resource type="Texture2D" uid="uid://btmee2rxrttte" path="res://art/background.png" id="2_ivpvi"]
 [ext_resource type="PackedScene" uid="uid://doctm8cegyc2y" path="res://pause_menu/pause_menu.tscn" id="2_ktfr2"]
 [ext_resource type="PackedScene" uid="uid://ctl857ofqkyjy" path="res://level/walls/walls.tscn" id="3_qohg2"]
+[ext_resource type="Script" uid="uid://c5mjnlo42vbqu" path="res://level/death_zone.gd" id="6_ivpvi"]
 [ext_resource type="AudioStream" uid="uid://rxejw3fckmx6" path="res://art/themesong.wav" id="7_ivpvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkbyq"]
-size = Vector2(1854, 20)
+size = Vector2(2309, 686)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vkbyq")
@@ -32,20 +32,19 @@ z_index = 1
 [node name="Player" parent="." instance=ExtResource("1_7lnir")]
 position = Vector2(960, 1000)
 
-[node name="Ball" parent="." instance=ExtResource("2_5gx2l")]
-position = Vector2(60, 500)
-
 [node name="Walls" parent="." instance=ExtResource("3_qohg2")]
 
 [node name="Death_Zone" type="Area2D" parent="."]
 position = Vector2(0, 1080)
+script = ExtResource("6_ivpvi")
 
 [node name="Death_Zone_Collision" type="CollisionShape2D" parent="Death_Zone"]
-position = Vector2(960, 10)
+position = Vector2(970.5, 343)
 shape = SubResource("RectangleShape2D_vkbyq")
 
 [node name="themeSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ivpvi")
 bus = &"music"
 
-[connection signal="body_entered" from="Death_Zone" to="Ball" method="_on_death_zone_body_entered"]
+[connection signal="got_hit" from="Player" to="." method="_on_Player_got_hit"]
+[connection signal="body_entered" from="Death_Zone" to="Death_Zone" method="_on_body_entered"]

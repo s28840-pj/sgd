@@ -7,9 +7,9 @@ var columns = 26
 var rows = 3
 var margin_up = 80
 var margin_x = 85
+var balls = 0
 
 func _ready() -> void:
-	
 	GameManager.show_canvas()
 	GameManager.bricksLeft = 0
 	
@@ -18,11 +18,12 @@ func _ready() -> void:
 	setupLevel()
 
 func setupLevel():
-	
 	$themeSong.playing = true
 	
-	$Ball.global_position = get_random_ball_position()
-	#Vector2(randi_range(100,1850),500)
+	var ball = Ball.create()
+	ball.exited_screen.connect(_on_ball_exit)
+	add_child(ball)
+	balls += 1
 	
 	rows = 2 + GameManager.level
 	
@@ -92,3 +93,14 @@ func get_random_ball_position() -> Vector2:
 	var y_pos = 500
 
 	return Vector2(randi_range(min_x, max_x), y_pos)
+
+func game_over() -> void:
+	get_tree().change_scene_to_file("res://game_over_screen/game_over.tscn")
+
+func _on_Player_got_hit() -> void:
+	game_over()
+
+func _on_ball_exit() -> void:
+	balls -= 1
+	if balls == 0:
+		game_over()

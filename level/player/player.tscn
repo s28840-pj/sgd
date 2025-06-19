@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bk768p22gmijq" path="res://level/player/player.gd" id="1_v8c4x"]
 [ext_resource type="Texture2D" uid="uid://hnlsl2offn2p" path="res://art/players_pixel/player1idle.png" id="2_v8c4x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8c4x"]
-size = Vector2(17.2727, 20)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_v8c4x"]
+points = PackedVector2Array(-6, -8, 7, -8, 9, -5, 9, 12, -8, 12, -8, -5)
 
 [node name="Player" type="CharacterBody2D" groups=["Players"]]
 motion_mode = 1
@@ -16,6 +16,6 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_v8c4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.5, 7)
-scale = Vector2(5.5, 5.5)
-shape = SubResource("RectangleShape2D_v8c4x")
+position = Vector2(-7.15256e-07, -8.47033e-22)
+scale = Vector2(5.81, 5.45)
+shape = SubResource("ConvexPolygonShape2D_v8c4x")

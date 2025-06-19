@@ -14,7 +14,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_Bullet_body_entered(body: Node2D) -> void:
 	if body is Player:
+		body._on_Bullet_entered()
 		queue_free()
 
 func _on_Bullet_area_entered(area: Area2D) -> void:
+	if area is Bullet:
+		return
 	queue_free()
