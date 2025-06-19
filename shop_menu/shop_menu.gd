@@ -23,48 +23,51 @@ func update_buy_buttons_state():
 	if GameManager.wide_powerup:
 		wide_buy_button.disabled = true
 		wide_buy_button.hide()
-	if GameManager.double_ball_powerup:
-		db_ball_buy_button.disabled = true
-		db_ball_buy_button.hide()
+	if GameManager.double_ball_powerups:
+		db_ball_buy_button.text = "Double balls: " + str(GameManager.double_ball_powerups)
+		pass
 
 func _on_buy_button_pressed(powerup_id: String) -> void:
 	var cost = 0
-	var is_owned = false
+	var is_already_activated: bool = false
 	var powerup_name = ""
-	var powerup_manager_variable
 	
 	match powerup_id:
 		POWERUP_WIDE:
 			cost=WIDE_POWERUP_COST
-			is_owned = GameManager.wide_powerup
+			if GameManager.wide_powerup:
+				is_already_activated = true
+				
 			powerup_name = "Wide Power-Up"
-			powerup_manager_variable = "wide_powerup"
 		POWERUP_DOUBLE_BALL:
 			cost = DOUBLE_BALL_POWERUP_COST
-			is_owned = GameManager.double_ball_powerup
-			powerup_name = "Double Ball Power-Up"
-			powerup_manager_variable = "double_ball_powerup"
+			
+			powerup_name = "Double Ball Power-Ups"
 		_:
 			buy_info.text = "Unknown power-up!"
 			buy_info.show()
 			return
 		
+	if is_already_activated:
+		buy_info.text = powerup_name + " already activated!"
+		buy_info.show()
+		return
+	
 	if GameManager.score >= cost:
 		GameManager.score -= cost
-		GameManager.set(powerup_manager_variable, true)
 		
+		match powerup_id:
+			POWERUP_WIDE:
+				GameManager.wide_powerup = true
+				wide_buy_button.disabled = true
+				wide_buy_button.hide()
+			POWERUP_DOUBLE_BALL:
+				GameManager.double_ball_powerups += 1
+				
 		update_credits()
 		buy_info.text = powerup_name + " bought!"
 		buy_info.show()
 		
-		match powerup_id:
-			POWERUP_WIDE:
-				wide_buy_button.disabled = true
-				wide_buy_button.hide()
-			POWERUP_DOUBLE_BALL:
-				db_ball_buy_button.disabled = true
-				db_ball_buy_button.hide()
-				
 	else:
 		buy_info.text = "Not enough credits! Need " + str(cost - GameManager.score) + " more for " + powerup_name + "!"
 		buy_info.show()

@@ -60,7 +60,6 @@ func initialize_player_for_game():
 	if GameManager.wide_powerup:
 		print("Aktywacja szerokiego gracza na te gre")
 		apply_width_inc()
-		GameManager.wide_powerup = false
 
 func apply_width_inc():
 	scale.x = scale_multiplier

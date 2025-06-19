@@ -5,6 +5,7 @@ var highscores = {}
 func _ready() -> void:
 	var score_text = $MarginContainer/VBoxContainer/Score_Box/Score_Text
 	var level_text = $MarginContainer/VBoxContainer/Level_Box/Level_Text
+	GameManager.wide_powerup = false
 	
 	GameManager.hide_canvas()
 	
@@ -58,6 +59,7 @@ func _on_confirm_pressed() -> void:
 func _on_restart_pressed() -> void:
 	GameManager.level = 1
 	GameManager.score = 0
+	GameManager.wide_powerup_used = false
 	get_tree().change_scene_to_file("res://level/level.tscn")
 
 

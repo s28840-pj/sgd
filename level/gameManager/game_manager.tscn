@@ -13,6 +13,19 @@ script = ExtResource("1_u4isy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="PowerupLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -921.0
+offset_top = 5.0
+offset_right = -484.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4isy")
+text = "Powerups: "
+
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5

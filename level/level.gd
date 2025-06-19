@@ -19,13 +19,11 @@ const colors = [
 
 func _ready() -> void:
 	GameManager.show_canvas()
-	
 	$Player.changePlayerSprites(GameManager.playerSpriteIndex)
 	
 	setupLevel()
 
-func spawn_ball() -> void:
-	var ball = Ball.create()
+func spawn_ball(ball: Ball) -> void:
 	ball.exited_screen.connect(_on_ball_exit)
 	add_child(ball)
 	balls += 1
@@ -52,7 +50,7 @@ func create_brick(fab: GDScript, pos: Vector2) -> void:
 func setupLevel():
 	$themeSong.playing = true
 	
-	spawn_ball()
+	spawn_ball(Ball.create())
 	
 	rows = 2 + GameManager.level
 	
@@ -75,6 +73,17 @@ func setupLevel():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
+		
+	if Input.is_action_just_pressed("activate_double_ball"):
+		if GameManager.double_ball_powerups > 0:
+			var existing_ball = $Ball
+			if existing_ball:
+				existing_ball.create_double_ball()
+				GameManager.double_ball_powerups -= 1
+			else:
+				printerr("nie znaleziono oryg kulki")
+		else:
+			print("brak ladunkow db ball")
 	
 	GameManager.multiplySpeed = GameManager.score / 20
 	if GameManager.multiplySpeed > 0:

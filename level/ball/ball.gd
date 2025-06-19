@@ -12,17 +12,11 @@ var is_active = false
 var savedSpeed
 @onready var player: Player = get_tree().get_first_node_in_group('Players')
 
-var ball_scene = preload("res://level/ball/ball.tscn")
-
 func _ready() -> void:
 	transform = player.transform.translated_local(Vector2(0, -80))
 	speed = speed + (20 * GameManager.level)
 	velocity = Vector2(speed * -1, speed)
 	savedSpeed = speed
-	
-	if GameManager.double_ball_powerup:
-		create_double_ball()
-		GameManager.double_ball_powerup = false
 
 func _physics_process(delta: float) -> void:
 	if is_active:
@@ -57,16 +51,19 @@ func _physics_process(delta: float) -> void:
 
 
 func create_double_ball():
-	var new_ball = ball_scene.instantiate()
-	
-	new_ball.name = "Ball_Clone"
 	var parent_level = get_parent()
-	if parent_level and parent_level.has_method("get_random_ball_position"):
-		if parent_level and parent_level.has_method("get_random_ball_position"):
-			parent_level.add_child.call_deferred(new_ball)
-		new_ball.global_position = parent_level.get_random_ball_position()
-	else:
-		printerr("blad - nie znaleziono wezla level lub funk. get_random_ball_pos")
+
+	var new_ball = Ball.create()
+	new_ball.name = "Ball_Clone_" + str(Time.get_ticks_msec())
+	parent_level.spawn_ball(new_ball)
+	new_ball.global_position = parent_level.get_random_ball_position()
+	new_ball.is_active = true
+	var random_direction_x = randf_range(-1.0, 1.0)
+	if abs(random_direction_x) < 0.2: 
+		random_direction_x = 0.5 if random_direction_x >= 0 else -0.5
+		
+	var initial_velocity_y = new_ball.speed
+	new_ball.velocity = Vector2(random_direction_x * new_ball.speed, -initial_velocity_y)
 
 func _on_death_zone_body_entered() -> void:
 	queue_free()
