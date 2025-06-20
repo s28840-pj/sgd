@@ -129,10 +129,8 @@ func game_over() -> void:
 
 func _on_Player_got_hit() -> void:
 	GameManager.player_health -= 1
-	print("Gracz trafiony! Pozostałe zdrowie: ", GameManager.player_health)
 	
 	if GameManager.player_health <= 0:
-		print("Gracz stracił wszystkie życia! Koniec gry.")
 		game_over()
 	
 
