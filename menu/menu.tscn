@@ -34,7 +34,7 @@ layout_mode = 2
 theme = ExtResource("2_pbjm4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_pbjm4")
 bbcode_enabled = true
-text = "[font_size=100]Breakout RougeLike[/font_size]"
+text = "[font_size=100]Breakout RogueLike[/font_size]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
