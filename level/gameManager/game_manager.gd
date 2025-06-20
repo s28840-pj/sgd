@@ -10,6 +10,7 @@ var wide_powerup_used: bool = false
 var double_ball_powerups: int = 0
 var player_health: int = 1
 var player_max_health: int = 1
+var cheat_mode: bool = false
 var coins
 
 func addPoints(points):
@@ -56,6 +57,16 @@ func _process(delta: float) -> void:
 	$CanvasLayer/LevelLabel.text = "Level: " + str(level)
 	$CanvasLayer/HealthLabel.text = "Health: " + str(player_health)
 	update_powerup_label()
+	
+	if GameManager.cheat_mode == true:
+		$CanvasLayer/CheatMode.visible = true
+	else:
+		$CanvasLayer/CheatMode.visible = false
+	
+	if Input.is_action_just_pressed("cheat"):
+		var cheatMode = GameManager.cheat_mode
+		GameManager.cheat_mode = !cheatMode
+		
 
 func update_powerup_label():
 	var powerup_text_lines = []

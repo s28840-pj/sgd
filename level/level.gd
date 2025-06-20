@@ -128,10 +128,11 @@ func game_over() -> void:
 	get_tree().change_scene_to_file("res://game_over_screen/game_over.tscn")
 
 func _on_Player_got_hit() -> void:
-	GameManager.player_health -= 1
+	if GameManager.cheat_mode == false:
+		GameManager.player_health -= 1
 	
-	if GameManager.player_health <= 0:
-		game_over()
+		if GameManager.player_health <= 0:
+			game_over()
 	
 
 func _on_Brick_got_hit(brick: Brick) -> void:

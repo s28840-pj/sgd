@@ -30,6 +30,9 @@ func _on_play_pressed() -> void:
 	MenuButtonsSfx.play_button_click()
 	GameManager.level = 1
 	GameManager.score = 0
+	GameManager.player_max_health = 1 + (GameManager.playerSpriteIndex - 1)
+	GameManager.player_health = GameManager.player_max_health
+	GameManager.save_user_settings(GameManager.coins,GameManager.playerSpriteIndex)
 	get_tree().change_scene_to_file("res://level/level.tscn")
 
 func _on_back_pressed() -> void:
@@ -40,9 +43,6 @@ func _on_player_button_pressed(index: int) -> void:
 	MenuButtonsSfx.play_button_click()
 	change_button(GameManager.playerSpriteIndex)
 	GameManager.playerSpriteIndex = index + 1
-	GameManager.player_max_health = 1 + (GameManager.playerSpriteIndex - 1)
-	GameManager.player_health = GameManager.player_max_health
-	GameManager.save_user_settings(GameManager.coins,GameManager.playerSpriteIndex)
 	_set_button_state(index, true)
 
 func _on_player_1_button_pressed() -> void:
