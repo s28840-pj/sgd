@@ -40,6 +40,9 @@ func _on_player_button_pressed(index: int) -> void:
 	MenuButtonsSfx.play_button_click()
 	change_button(GameManager.playerSpriteIndex)
 	GameManager.playerSpriteIndex = index + 1
+	GameManager.player_max_health = 1 + (GameManager.playerSpriteIndex - 1)
+	GameManager.player_health = GameManager.player_max_health
+	GameManager.save_user_settings(GameManager.coins,GameManager.playerSpriteIndex)
 	_set_button_state(index, true)
 
 func _on_player_1_button_pressed() -> void:

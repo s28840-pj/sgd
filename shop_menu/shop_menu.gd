@@ -17,7 +17,7 @@ func _ready() -> void:
 	update_buy_buttons_state()
 
 func update_credits():
-	credits_label.text = "Credits: " + str(GameManager.score)
+	credits_label.text = "Credits: " + str(GameManager.coins)
 	
 func update_buy_buttons_state():
 	if GameManager.wide_powerup:
@@ -54,8 +54,9 @@ func _on_buy_button_pressed(powerup_id: String) -> void:
 		buy_info.show()
 		return
 	
-	if GameManager.score >= cost:
-		GameManager.score -= cost
+	if GameManager.coins >= cost:
+		GameManager.subtractCoins(cost)
+		#GameManager.coins -= cost
 		
 		match powerup_id:
 			POWERUP_WIDE:
@@ -70,9 +71,10 @@ func _on_buy_button_pressed(powerup_id: String) -> void:
 		buy_info.show()
 		
 	else:
-		buy_info.text = "Not enough credits! Need " + str(cost - GameManager.score) + " more for " + powerup_name + "!"
+		buy_info.text = "Not enough credits! Need " + str(cost - GameManager.coins) + " more for " + powerup_name + "!"
 		buy_info.show()
 
 func _on_back_pressed() -> void:
+	GameManager.save_user_settings(GameManager.coins,GameManager.playerSpriteIndex)
 	MenuButtonsSfx.play_button_click()
 	get_tree().change_scene_to_file("res://menu/menu.tscn")

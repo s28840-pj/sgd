@@ -9,6 +9,8 @@ func _ready() -> void:
 	#GameManager.score = 0
 	
 	GameManager.hide_canvas()
+	GameManager.load_user_settings()
+	
 
 func _on_play_pressed() -> void:
 	MenuButtonsSfx.play_button_click()

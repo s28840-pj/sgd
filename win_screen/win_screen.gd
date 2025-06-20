@@ -29,7 +29,9 @@ func _ready() -> void:
 	var score_text = $MarginContainer/VBoxContainer/Score_Box/Score_Text
 	var level_text = $MarginContainer/VBoxContainer/Level_Box/Level_Text
 	
+	GameManager.addCoins(GameManager.score)
 	GameManager.hide_canvas()
+	GameManager.save_user_settings(GameManager.coins, GameManager.playerSpriteIndex)
 	
 	GameManager.level = 10
 	

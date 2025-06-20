@@ -5,4 +5,5 @@
 
 [node name="SFXButton" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_qhu3r")
+bus = &"sfx"
 script = ExtResource("2_rwe0o")

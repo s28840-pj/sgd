@@ -19,8 +19,8 @@ const colors = [
 
 func _ready() -> void:
 	MenusMusic.stop()
-	GameManager.player_max_health = 1 + (GameManager.playerSpriteIndex - 1)
-	GameManager.player_health = GameManager.player_max_health
+	#GameManager.player_max_health = 1 + (GameManager.playerSpriteIndex - 1)
+	#GameManager.player_health = GameManager.player_max_health
 	print("Level initialized. Player Health set to: ", GameManager.player_health, " (Player Index: ", GameManager.playerSpriteIndex, ")")
 	GameManager.show_canvas()
 	$Player.changePlayerSprites(GameManager.playerSpriteIndex)

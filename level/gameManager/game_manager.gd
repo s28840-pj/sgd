@@ -1,6 +1,6 @@
 extends Node
 
-var score = 500
+var score = 0
 var level = 1
 var multiplySpeed = 0
 var playerSpriteIndex = 1
@@ -10,10 +10,35 @@ var wide_powerup_used: bool = false
 var double_ball_powerups: int = 0
 var player_health: int = 1
 var player_max_health: int = 1
+var coins
 
 func addPoints(points):
 	score += points
 	
+
+func addCoins(value):
+	coins += value
+
+func subtractCoins(value):
+	coins -= value
+	
+func load_user_settings():
+	var config = ConfigFile.new()
+	var err = config.load("user://user_settings.cfg")
+	if err != OK:
+		coins = 0
+		playerSpriteIndex = 1
+	coins = config.get_value("user","coins",0)
+	playerSpriteIndex = config.get_value("user","playerSpriteIndex", 1)
+
+func save_user_settings(coins: int, playerSpriteIndex: int):
+	var config = ConfigFile.new()
+	config.load("user://user_settings.cfg")
+	var previousCoins = config.get_value("user","coins")
+	config.set_value("user","coins",coins)
+	config.set_value("user","playerSpriteIndex", playerSpriteIndex)
+	config.save("user://user_settings.cfg")
+
 func hide_canvas():
 	$CanvasLayer/ScoreLabel.hide()
 	$CanvasLayer/LevelLabel.hide()

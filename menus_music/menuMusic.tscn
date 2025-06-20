@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://45nrutseewq4"]
+
+[ext_resource type="AudioStream" uid="uid://2ciqfqrjk5tg" path="res://art/menuthemesong.wav" id="1_mhg8p"]
+
+[node name="Menu_Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_mhg8p")
+volume_db = 8.433
+autoplay = true
+bus = &"music"
