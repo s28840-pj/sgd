@@ -142,6 +142,7 @@ func _on_Brick_got_hit(brick: Brick) -> void:
 		if GameManager.level == 11:
 			get_tree().change_scene_to_file("res://win_screen/win_screen.tscn")
 			return
+		GameManager.cheat_mode = false
 		get_tree().reload_current_scene()
 	else:
 		await get_tree().create_timer(0.15).timeout
